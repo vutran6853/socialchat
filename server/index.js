@@ -9,6 +9,8 @@ const massive = require('massive');
 app.use(cors());
 app.use(json());
 
+const { login, register } = require('./controllers/socialchatControllers');
+
 ////  Massive connect to SQL system functionality
 massive(process.env.CONNECTION_STRING)
 .then((dbInstace) => {
@@ -16,6 +18,11 @@ massive(process.env.CONNECTION_STRING)
   app.set('db', dbInstace)
 })
 .catch((error) => console.log(`Danger check SQL connection ${ error }`));
+
+
+////  Auth Endpoint
+app.post('/api/auth/login', login)
+app.post('/api/auth/register', register)
 
 
 app.listen(port, () => {
