@@ -12,3 +12,10 @@ CREATE TABLE posts (
 	post_content TEXT,
 	author_id INTEGER REFERENCES users(user_id)
 );
+
+
+INSERT INTO users(user_username, user_password, user_profile_pic)
+VALUES ($1, $2, $3)
+RETURNING user_username, user_profile_pic;
+
+

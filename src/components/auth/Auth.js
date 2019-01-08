@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getUserInfo } from '../../duck/reducer';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
@@ -8,7 +10,8 @@ class Auth extends Component {
     this.state = { 
       username: '',
       password: '',
-     };
+     }
+     this.handleLogin = this.handleLogin.bind(this);
   }
 
   handleInputUserName = (value) => {
@@ -19,8 +22,7 @@ class Auth extends Component {
     this.setState({ password: value })
   }
 
-  handleLogin = () => {
-    console.log('handleLogin')
+  handleLogin() {
     let content = { userName: this.state.username, passWord: this.state.password }
 
     fetch(`${ SERVER_URL_ENDPOINT }/api/auth/login`, {
@@ -28,15 +30,22 @@ class Auth extends Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(content)
     })
+    .then((response) => response.json())
     .then((response) => {
-      console.log(response)
+      // if(response[0] !== undefined) {
+        console.log('response[0]', response[0]);
+        console.log(this.props);
+        this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic )
+        this.props.history.push('/dashboard')
+        
+      // } else {
+        // console.log('undefined', undefined);
+      // }
     })
-    .catch((error) => console.log(`Danger! FrontEnd error ${ error }`))
-
+    .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
   }
 
   handleRegister = () => {
-    console.log('handleRegister')
     let content = { userName: this.state.username, passWord: this.state.password }
 
     fetch(`${ SERVER_URL_ENDPOINT }/api/auth/register`, {
@@ -45,17 +54,17 @@ class Auth extends Component {
       body: JSON.stringify(content)
     })
     .then((response) => response.json())
-    // .then((response) => console.log('line 48 ', response)) 
-    .then(this.props.history.push('/dashboard component route later'))
+    .then(this.props.history.push('/dashboard'))
     .catch((error) => console.log(`Danger! FrontEnd error ${ error }`))
   }
 
   render() {
+    // console.log(this.props);
     return (
       <div>
         Auth Component
-        <input onChange={ (e) => this.handleInputUserName(e.target.value, 'username')  } placeholder='Enter your username'></input>
-        <input onChange={ (e) => this.handleInputUserPassword(e.target.value, 'passwordname')  } placeholder='Enter your password'></input>
+        <input onChange={ (e) => this.handleInputUserName(e.target.value, 'username') } placeholder='Enter your username'></input>
+        <input onChange={ (e) => this.handleInputUserPassword(e.target.value, 'passwordname') } placeholder='Enter your password'></input>
         <button onClick={ () =>  this.handleLogin() }>login</button>
         <button onClick={ () => this.handleRegister() }>Register</button>
       </div>
@@ -63,4 +72,4 @@ class Auth extends Component {
   }
 }
 
-export default Auth;
+export default connect(null, { getUserInfo }) (Auth);
