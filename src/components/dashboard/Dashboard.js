@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Navbar from '../nav/nav';
+import { connect } from 'react-redux';
+
+const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -13,6 +16,50 @@ class Dashboard extends Component {
   }
   
   ////  get all post from database function
+  componentDidMount() {
+    let { id } = this.props.userReducer;
+    let { userposts, searchItem } = this.state;
+    console.log('userposts:', !userposts);
+    console.log('searchItem:', searchItem);
+
+    ////  If userposts is true AND there is a search string
+    if(userposts === true && searchItem !== '') {
+      console.log(true);
+
+      // fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPostBySearch/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
+      //   method: 'GET',
+      //   headers: { 'Content-Type': 'application/json' },
+      // })
+      // .then((response) => response.json())
+      // .then((response) => {
+      //   console.log(response);
+      //   // this.props.history.push('/dashboard')
+      // })
+      // .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
+
+      //// If userposts is false AND there is no search string
+    } else if(userposts !== false && searchItem === '') {
+      console.log(true);
+
+      // fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPost/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
+      //   method: 'GET',
+      //   headers: { 'Content-Type': 'application/json' },
+      // })
+      // .then((response) => response.json())
+      // .then((response) => {
+      //   console.log(response);
+      //   // this.props.history.push('/dashboard')
+      // })
+      // .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
+
+
+    } else {
+      console.log(false);
+
+    }
+
+    
+  }
 
   ////  reset search input field function
   handleInputSearchItem = (value) => {
@@ -41,4 +88,8 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+function mapStateToProps(state) {
+  return state;
+}
+
+export default connect(mapStateToProps, {  }) (Dashboard);

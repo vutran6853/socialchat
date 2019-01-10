@@ -41,7 +41,7 @@ export default function userReducer(state = initialState, action) {
     }
 
     default:
-    console.log(state)
+    // console.log(state)
     return state;
   }
 }

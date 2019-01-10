@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 
 const navBar = (props) => {
-  console.log(props.userReducer);
+  // console.log(props.userReducer);
   // console.log(this.props);
   return(
     <div>
@@ -21,6 +21,7 @@ const navBar = (props) => {
       </Link>
       <div>
         <p>Placeholder for now:</p>
+        <p>ID: { props.userReducer.id }</p>
         <p>Name: { props.userReducer.username }</p>
         <img src={ props.userReducer.profile_picture }></img>
       </div>
@@ -39,7 +40,6 @@ navBar.propTypes = {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return state;
 }
 
