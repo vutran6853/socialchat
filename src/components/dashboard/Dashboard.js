@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Navbar from '../nav/nav';
+import Navbar from '../navBar/NavBar';
 import { connect } from 'react-redux';
+import css from './dashboard.scss';
+import { Link } from 'react-router-dom';
+import NavBar from '../navBar/NavBar';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
@@ -17,48 +20,7 @@ class Dashboard extends Component {
   
   ////  get all post from database function
   componentDidMount() {
-    let { id } = this.props.userReducer;
-    let { userposts, searchItem } = this.state;
-    console.log('userposts:', !userposts);
-    console.log('searchItem:', searchItem);
-
-    ////  If userposts is true AND there is a search string
-    if(userposts === true && searchItem !== '') {
-      console.log(true);
-
-      // fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPostBySearch/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
-      //   method: 'GET',
-      //   headers: { 'Content-Type': 'application/json' },
-      // })
-      // .then((response) => response.json())
-      // .then((response) => {
-      //   console.log(response);
-      //   // this.props.history.push('/dashboard')
-      // })
-      // .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
-
-      //// If userposts is false AND there is no search string
-    } else if(userposts !== false && searchItem === '') {
-      console.log(true);
-
-      // fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPost/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
-      //   method: 'GET',
-      //   headers: { 'Content-Type': 'application/json' },
-      // })
-      // .then((response) => response.json())
-      // .then((response) => {
-      //   console.log(response);
-      //   // this.props.history.push('/dashboard')
-      // })
-      // .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
-
-
-    } else {
-      console.log(false);
-
-    }
-
-    
+    this.handleGetPost()
   }
 
   ////  reset search input field function
@@ -66,23 +28,86 @@ class Dashboard extends Component {
     this.setState({ searchItem: value })
   }
 
-  handleSearch = () => {
-    console.log('handleSearch');
+  handleGetPost = () => {
+    let { id } = this.props.userReducer;
+    let { userposts, searchItem } = this.state;
+
+    ////  If userposts is true AND there is a search string
+    if(userposts === true && searchItem !== '') {
+      // console.log(true);
+
+      fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPostBySearch/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        this.setState({ posts: response })
+        // this.props.history.push('/dashboard')
+      })
+      .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
+
+      //// If userposts is false AND there is no search string
+    } else if(!userposts === false && searchItem == '') {
+      // console.log(true);
+
+      fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPostByNoSeach/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        this.setState({ posts: response })
+        // this.props.history.push('/dashboard')
+      })
+      .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
+
+    } else {
+      console.log(false);
+    }
+
   }
+
 
   handleReset = () => {
     console.log('handleReset');
   }
 
+  handleViewPost = (postID) => {
+    console.log('postID::', postID);
+  }
+
   render() {
-    console.log(this.state);
+    let { posts } = this.state;
+
+    let displayPosts = posts.map((value, index) => {
+      // console.log(value, index);
+      return(
+        <Link to={ `post/${ value.post_id }` }>
+          <div key={ value.post_id }  className='dashboardPostBox'>
+            <p>Title: { value.post_title }</p>
+            <p>userName: { value.user_username }</p>
+            <img src={ value.user_profile_pic }  alt={ value.user_username }></img>
+          </div>
+        </Link>
+
+      )
+    });
+
     return (
       <div>
+        <NavBar/>
         Dashboard Component
         <input onChange={ (e) => this.handleInputSearchItem(e.target.value) } placeholder='Search item'></input>
 
-        <button onClick={ () =>  this.handleSearch() }>Search</button>
+        <button onClick={ () =>  this.handleGetPost() }>Search</button>
         <button onClick={ () =>  this.handleReset() }>Reset</button>
+
+        <div>
+          { displayPosts }
+        </div>
       </div>
     );
   }

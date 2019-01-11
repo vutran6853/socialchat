@@ -33,9 +33,9 @@ class Auth extends Component {
     .then((response) => response.json())
     .then((response) => {
       // if(response[0] !== undefined) {
-        console.log('response[0]', response[0]);
+        console.log('response[0]', response);
         console.log(this.props);
-        this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic )
+        this.props.getUserInfo(response.userInfo.user_id, response.userInfo.user_username, response.userInfo.user_profile_pic )
         this.props.history.push('/dashboard')
         
       // } else {

@@ -1,0 +1,7 @@
+@import '../../global.scss';
+
+
+.dashboardPostBox {
+  border: 1px solid black;
+  color: map-get($colors , lightPink);
+}

@@ -1,3 +1,5 @@
+const SERVER_URL_ENDPOINT = 'http://localhost:3003';
+
 ////  Initial value
 const GETUSERINFO = 'GETUSERINFO'
 
@@ -11,14 +13,21 @@ const initialState = {
 }
 
 //// Initial Action Creator for Payload
-export function getUserInfo(user_id, user_username, user_profile_picture) {
+export function getUserInfo(user_id, user_username, user_profile_pic) {
+  let content = { id: user_id, username: user_username, profile_pic: user_profile_pic }
+
   return{
     type: GETUSERINFO,
-    payload: {
-      id: user_id,
-      username: user_username,
-      profile_picture: user_profile_picture
-    }
+    payload:  fetch(`${ SERVER_URL_ENDPOINT }/api/auth/userId`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(content)
+              })
+              .then((response) => response.json())
+              .then((response) => {
+                console.log(response);
+              })
+              .catch((error) => console.log(`Danger! FrontEnd error ${ error }`))
   }
 }
 
