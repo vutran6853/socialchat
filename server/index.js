@@ -7,24 +7,24 @@ const app = express();
 const massive = require('massive');
 const session = require('express-session');
 
-const { userLogin, userRegister, userByIDPost, userLogout, userId,
+const { userLogin, userRegister, userByIDPost, userLogout,
         getAllPostBySearch, getAllPostByNoSeach, getSinglePostById } = require('./controllers/socialchatControllers');
 
-const checkForSession = require('./controllers/checkForSession');
+// const checkForSession = require('./controllers/checkForSession');
 
 app.use(cors());
 app.use(json());
 
 //// Init Session setting. This will save userID in browser 
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false
-  })
-);
+// app.use(session({
+//   secret: process.env.SESSION_SECRET,
+//   resave: false,
+//   saveUninitialized: false
+//   })
+// );
 
 ////  check user on session
-app.use(checkForSession);
+// app.use(checkForSession);
 
 ////  Massive connect to SQL system functionality
 massive(process.env.CONNECTION_STRING)
@@ -38,7 +38,7 @@ massive(process.env.CONNECTION_STRING)
 ////  Auth Endpoint
 app.post('/api/auth/login', userLogin)
 app.post('/api/auth/register', userRegister)
-app.post('/api/auth/userId', userId)
+// app.post('/api/auth/userId', userId)
 app.post('/api/auth/logout', userLogout)
 
 app.post('/api/post/:id', userByIDPost)

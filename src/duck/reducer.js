@@ -15,19 +15,10 @@ const initialState = {
 //// Initial Action Creator for Payload
 export function getUserInfo(user_id, user_username, user_profile_pic) {
   let content = { id: user_id, username: user_username, profile_pic: user_profile_pic }
-
+  console.log(content);
   return{
     type: GETUSERINFO,
-    payload:  fetch(`${ SERVER_URL_ENDPOINT }/api/auth/userId`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(content)
-              })
-              .then((response) => response.json())
-              .then((response) => {
-                console.log(response);
-              })
-              .catch((error) => console.log(`Danger! FrontEnd error ${ error }`))
+    payload: content
   }
 }
 
@@ -40,7 +31,7 @@ export default function userReducer(state = initialState, action) {
         ...state,
         id: action.payload.id,
         username: action.payload.username,
-        profile_picture: action.payload.profile_picture
+        profile_picture: action.payload.profile_pic
     }
     case GETUSERINFO:
     console.log(`${ GETUSERINFO }_REJECTED`);

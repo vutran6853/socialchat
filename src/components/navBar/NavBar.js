@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getUserInfo } from '../../duck/reducer';
-
+import Axios from 'axios';
+import css from './navbar.scss'
 class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -13,10 +14,6 @@ class NavBar extends Component {
   componentDidMount() {
 
 
-    this.props.getUserInfo()
-    .then((response) => {
-      console.log(response);
-    })
 
 
   }

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getUserInfo } from '../../duck/reducer';
+import Axios from 'axios';
+import css from './auth.scss';
+import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
@@ -34,8 +37,8 @@ class Auth extends Component {
     .then((response) => {
       // if(response[0] !== undefined) {
         console.log('response[0]', response);
-        console.log(this.props);
-        this.props.getUserInfo(response.userInfo.user_id, response.userInfo.user_username, response.userInfo.user_profile_pic )
+        // console.log(this.props);
+        this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
         this.props.history.push('/dashboard')
         
       // } else {
@@ -61,13 +64,24 @@ class Auth extends Component {
   render() {
     // console.log(this.props);
     return (
-      <div>
+      <div className='authMainBox'>
         Auth Component
-        <input onChange={ (e) => this.handleInputUserName(e.target.value, 'username') } placeholder='Enter your username'></input>
-        <input onChange={ (e) => this.handleInputUserPassword(e.target.value, 'passwordname') } placeholder='Enter your password'></input>
-        <button onClick={ () =>  this.handleLogin() }>login</button>
-        <button onClick={ () => this.handleRegister() }>Register</button>
-      </div>
+        <div className='formBox'>
+          <Col sm={ 10 }>
+            <Label for='username' sm={ 2 }>Username</Label>
+            <Input onChange={ (e) => this.handleInputUserName(e.target.value, 'username') } placeholder='Enter your username' />
+          </Col>
+
+          <Col sm={ 10 }>
+            <Label for='password' sm={ 2 }>Password</Label>
+            <Input type="password" onChange={ (e) => this.handleInputUserPassword(e.target.value, 'passwordname') } placeholder='Enter your password'/>
+          </Col>
+          <Col sm={ 10 }>
+            <button onClick={ () =>  this.handleLogin() }>login</button>
+            <button onClick={ () => this.handleRegister() }>Register</button>
+          </Col>
+        </div>
+    </div>
     );
   }
 }

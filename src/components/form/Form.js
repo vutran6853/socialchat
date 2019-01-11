@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import css from './form.scss';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
