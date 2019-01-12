@@ -5,4 +5,34 @@ $colors: (
   lightYellow: #E9FF70,
   lightblue: #F2F2F2,
   lightblack: #403D39
-)
+);
+
+$Moblie375MinWidth: 375px;  //// IphoneX Portrait
+$Moblie812MaxHeight: 812px; //// IphoneX Portrait
+
+$Moblie812MinWidth: 812px;  //// IphoneX landscape View
+$Moblie375MaxHeight: 375px;  //// IphoneX landscape View
+
+$Moblie375MinWidth: 375px;  //// Iphone 6/7/8 Portrait
+$Moblie667MaxHeight: 667px; //// Iphone 6/7/8 Portrait
+
+$Moblie667MinWidth: 667px;  //// Iphone 6/7/8 Landscape View
+$Moblie375MaxHeight: 375px; //// Iphone 6/7/8 Landscape View
+
+$Moblie414MinWidth: 414px;  //// Iphone 6/7/8 Plus Portrait
+$Moblie736MaxHeight: 736px; //// Iphone 6/7/8 Plus Portrait
+
+$Moblie736MinWidth: 736px;  //// Iphone 6/7/8 Plus Landscape View
+$Moblie414MaxHeight: 414px; //// Iphone 6/7/8 Plus Landscape View
+
+$Moblie411MaxWidth: 411px;  //// Pixel
+$Moblie823MaxHeight: 832px; //// Pixel
+
+$TabletMinWidth: 768px;
+$TabletMaxWidth: 1023px;
+
+$destop1024MinWidth: 1024px;  //// 1024 Screen
+
+$destop1440MinWidth: 1440px;  //// 2k Screen
+
+$destop2160MinWidth: 2160px;  //// 4k Screen

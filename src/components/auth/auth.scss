@@ -3,18 +3,321 @@
 .authMainBox {
   height: 100vh;
   width: 100vw;
-  // width: 100%;
   background-color: map-get($colors , lightPink);
+  border: 0.1px solid lightblue;
 
   .formBox {
     background-color: map-get($colors , lightOrange);
-    border: 1px solid red;
+    // border: 3px solid red;
     box-shadow: 5px 10px #888888;
     height: 50vh;
     width: 30vw;
-    margin-top: 15vh;
-    margin-left: 70vh;
-    padding-top: 10vh;
-    padding-left: 5vh;
+    margin-top: 15rem;
+    margin-left: 55rem;
+    padding-top: 10rem;
+    padding-left: 17rem;
+  }
+
+  button {
+    border: 1px solid red;
+    color: #888888;
+    margin-top: 10px;
+    margin-left: 4px;
+    background-color: blue;
   }
 }
+
+//// 4k screen
+@media(min-width: $destop2160MinWidth) { 
+  .authMainBox {
+    height: 100vh;
+    width: 100vw;
+    background-color: map-get($colors , lightPink);
+  
+    // background-color: red;
+    .formBox {
+      background-color: map-get($colors , lightOrange);
+      // background-color: gray;
+      // border: 1px solid red;
+      box-shadow: 5px 10px #888888;
+      height: 50vh;
+      width: 30vw;
+      // margin-top: 15rem !important;
+      // margin-left: 55rem;
+      // padding-top: 10rem;
+      // padding-left: 17rem;
+    }
+  
+    // button {
+    //   border: 1px solid red;
+    //   color: #888888;
+    //   margin-top: 10px;
+    //   margin-left: 4px;
+    //   background-color: blue;
+    // }
+  }
+}
+
+/// 2k screen
+@media(max-width: $destop1440MinWidth) {
+  .authMainBox {
+    background-color: map-get($colors , lightPink);
+  
+    // background-color: red;
+    .formBox {
+      background-color: map-get($colors , lightOrange);
+      // background-color: gray;
+      // border: 1px solid red;
+      box-shadow: 5px 10px #888888;
+      // height: 50vh;
+      // width: 30vw;
+      // margin-top: 15rem !important;
+      margin-left: 35rem;
+      padding-top: 10rem;
+      padding-left: 8rem;
+    }
+  
+    // button {
+    //   border: 1px solid red;
+    //   color: #888888;
+    //   margin-top: 10px;
+    //   margin-left: 4px;
+    //   background-color: blue;
+    // }
+  }
+}
+
+@media(max-width: $destop1024MinWidth) {
+  .authMainBox {
+    background-color: map-get($colors , lightPink);
+  
+    // background-color: red;
+    .formBox {
+      background-color: map-get($colors , lightOrange);
+      // background-color: gray;
+      // border: 1px solid red;
+      box-shadow: 5px 10px #888888;
+      height: 50vh;
+      width: 40vw;
+      margin-top: 12rem;
+      margin-left: 18rem;
+      padding-top: 9rem;
+      padding-left: 7rem;
+    }
+  
+    // button {
+    //   border: 1px solid red;
+    //   color: #888888;
+    //   margin-top: 10px;
+    //   margin-left: 4px;
+    //   background-color: blue;
+    // }
+  }
+}
+
+////  iPad screen size
+@media(max-width: 768px) {
+  .authMainBox {
+    background-color: map-get($colors , lightPink);
+  
+    // background-color: red;
+    .formBox {
+      background-color: map-get($colors , lightOrange);
+      // background-color: gray;
+      // border: 1px solid red;
+      box-shadow: 5px 10px #888888;
+      height: 50vh;
+      width: 50vw;
+      margin-top: 12rem;
+      margin-left: 12rem;
+      padding-top: 9rem;
+      padding-left: 7rem;
+    }
+  }
+}
+
+@media(max-width: $Moblie411MaxWidth) {
+  .authMainBox {
+    background-color: map-get($colors , lightPink);
+    // background-color: black;
+    // height: 76.6rem;
+    // width: 30.5rem;
+
+    .formBox {
+      background-color: map-get($colors , lightOrange);
+      // background-color: gray !important;
+      // border: 1px solid red;
+      box-shadow: 5px 10px #888888;
+      height: 70vh;
+      width: 90vw;
+      margin-top: 5rem !important;
+      margin-left: 1rem !important;
+      padding-top: 10rem !important;
+      padding-left: 5rem !important;
+    }
+  }
+}
+
+////  Iphone 6/7/8 Plus Portrait
+@media(min-width: $Moblie414MinWidth) and (max-height: $Moblie736MaxHeight) and (orientation: portrait) {
+  .authMainBox {
+    background-color: map-get($colors , lightPink);
+    // background-color: black !important;
+    // height: 76.6rem !important;
+    // width: 30.5rem;
+
+    .formBox {
+      background-color: map-get($colors , lightOrange);
+      // background-color: gray !important;
+      // border: 1px solid red;
+      box-shadow: 5px 10px #888888;
+      // height: 50vh;
+      // width: 90vw;
+      margin-top: 5rem !important;
+      margin-left: 1rem !important;
+      padding-top: 10rem !important;
+      padding-left: 5rem !important;
+    }
+  }
+}
+
+//// Iphone 6/7/8 Plus Landscape View
+@media(min-width: $Moblie736MinWidth) and (max-height: $Moblie414MaxHeight) and (orientation: landscape) {
+  .authMainBox {
+    background-color: map-get($colors , lightPink);
+    // background-color: red;
+    // height: 23rem;
+    // width: 30.5rem;
+
+    .formBox {
+      background-color: map-get($colors , lightOrange);
+      // background-color: gray;
+      // border: 1px solid red;
+      box-shadow: 5px 10px #888888;
+      height: 70vh;
+      width: 70vw;
+      margin-top: 3rem;
+      margin-left: 6rem;
+      padding-top: 2rem;
+      padding-left: 10rem;
+    }
+  }
+}
+
+
+////  Iphone 6/7/8 Portrait
+@media(min-width: $Moblie375MinWidth) and (max-height: $Moblie667MaxHeight) and (orientation: portrait) {
+  .authMainBox {
+    background-color: map-get($colors , lightPink);
+    // background-color: black !important;
+    height: 76.6rem;
+    width: 30.5rem;
+
+    .formBox {
+      background-color: map-get($colors , lightOrange);
+      // background-color: gray !important;
+      // border: 1px solid red;
+      box-shadow: 5px 10px #888888;
+      // height: 50vh;
+      // width: 90vw;
+      margin-top: 10rem !important;
+      margin-left: 5rem !important;
+      padding-top: 5rem !important;
+      padding-left: 5rem;
+    }
+  }
+}
+
+//// Iphone 6/7/8 Landscape View
+@media(min-width: $Moblie667MinWidth) and (max-height: $Moblie375MaxHeight) and (orientation: landscape) {
+  .authMainBox {
+    background-color: map-get($colors , lightPink);
+    // background-color: red;
+    // height: 23rem;
+    // width: 30.5rem;
+
+    .formBox {
+      background-color: map-get($colors , lightOrange);
+      // background-color: gray;
+      // border: 1px solid red;
+      box-shadow: 5px 10px #888888;
+      height: 70vh;
+      width: 70vw;
+      margin-top: 3rem;
+      margin-left: 6rem;
+      padding-top: 2rem;
+      padding-left: 10rem;
+    }
+  }
+}
+
+//// IphoneX landscape View
+@media(min-width: $Moblie812MinWidth) and (max-height: $Moblie375MaxHeight) and (orientation: landscape) {
+  .authMainBox {
+    background-color: map-get($colors , lightPink);
+    // background-color: red;
+    // height: 23rem;
+    // width: 30.5rem;
+
+    .formBox {
+      background-color: map-get($colors , lightOrange);
+      // background-color: gray;
+      // border: 1px solid red;
+      box-shadow: 5px 10px #888888;
+      height: 70vh;
+      width: 70vw;
+      margin-top: 3rem;
+      margin-left: 8rem;
+      padding-top: 2rem;
+      padding-left: 12rem;
+    }
+  }
+}
+
+//// IphoneX Portrait
+@media(min-width: $Moblie375MinWidth) and (max-height: $Moblie812MaxHeight) and (orientation: portrait) {
+  .authMainBox {
+    background-color: map-get($colors , lightPink);
+    // background-color: red;
+    // height: 23rem;
+    // width: 30.5rem;
+
+    .formBox {
+      background-color: map-get($colors , lightOrange);
+      // background-color: gray;
+      // border: 1px solid red;
+      box-shadow: 5px 10px #888888;
+      height: 70vh;
+      width: 90vw;
+      margin-top: 5rem;
+      margin-left: 1rem;
+      padding-top: 10rem;
+      padding-left: 5rem;
+    }
+  }
+}
+
+
+////  most smartphone Portrait
+// @media (min-width: 320px) and (max-width: 480px) {
+//   .authMainBox {
+//     background-color: map-get($colors , lightPink);
+//     // background-color: red;
+//     // height: 76.6rem;
+//     // width: 30.5rem;
+
+//     .formBox {
+//       background-color: map-get($colors , lightOrange);
+//       // background-color: gray;
+//       // border: 1px solid red;
+//       box-shadow: 5px 10px #888888;
+//       height: 50vh;
+//       width: 90vw;
+//       margin-top: 10rem;
+//       margin-left: 1rem;
+//       padding-top: 5rem;
+//       padding-left: 5rem;
+//     }
+//   }
+// }
+
