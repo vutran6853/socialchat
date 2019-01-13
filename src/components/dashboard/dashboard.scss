@@ -1,7 +1,55 @@
 @import '../../global.scss';
 
 
+.dashboardbox {
+  border: 1px solid white;
+    // float: right;
+
+  .innerdashboardbox {
+    // border: 2px solid blue;
+    margin-left: 40vh;
+    margin-right: 40vh;
+  }
+
+  .dashboard_search_box {
+    border: 1px solid black;
+    margin-top: 1vw;
+    padding: 1vw;
+    box-shadow: 5px 5px #888888;
+
+    input {
+      border: 1px solid black;
+      // display: inline-block;
+      width: 45vw;
+    }
+  }
+}
+
 .dashboardPostBox {
   border: 1px solid black;
-  color: map-get($colors , lightPink);
+  margin: 10px;
+  box-shadow: 5px 5px #888888;
+  height: 150px;
+
+  img {
+    border: 1px solid blue;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    float: right;
+  }
+
+  .titleP {
+    // border: 2px solid black;
+    display: inline-flex;
+    margin-top: 10px;
+    margin-left: 10px;
+
+    height: 10vh;
+    width: 40vw;
+  }
+
+  .usernameP {
+    float: right;
+  }
 }

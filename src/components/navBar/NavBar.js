@@ -11,32 +11,33 @@ class NavBar extends Component {
     this.state = {  };
   }
 
-  componentDidMount() {
-
-
-
-
-  }
-  
   render() {
     return (
-      <div>
-        NavBar component
-      <Link to='/dashboard'>
-        <button>Dashboard</button>
-      </Link>
-      <Link to='/new'>
-        <button>Form</button>
-      </Link>
-      <Link to='/'>
-        <button >Logout</button>
-      </Link>
-      <div>
-        <p>Placeholder for now:</p>
-        <p>ID: { this.props.userReducer.id }</p>
-        <p>Name: { this.props.userReducer.username }</p>
-        <img src={ this.props.userReducer.profile_picture }></img>
-      </div>
+      <div className='navbarBox'>
+        <div className='profileBox'>
+          <img src={ this.props.userReducer.profile_picture }></img>
+          <p>Name: { this.props.userReducer.username }</p>
+        </div>
+
+        <Link to='/dashboard'>
+          <button className='button1'>
+            <i class='fas fa-home'></i>
+          </button>
+        </Link>
+
+        <Link to='/new'>
+          <button className='button1'>
+            <i class='fa fa-plus-circle'></i>
+          </button>
+        </Link>
+
+        <Link to='/'>
+          <button className='button2'>
+            <i class='fas fa-sign-out-alt'></i>
+          </button>
+        </Link>
+
+
     </div>
     );
   }

@@ -87,9 +87,9 @@ class Dashboard extends Component {
       return(
         <Link to={ `post/${ value.post_id }` }>
           <div key={ value.post_id }  className='dashboardPostBox'>
-            <p>Title: { value.post_title }</p>
-            <p>userName: { value.user_username }</p>
             <img src={ value.user_profile_pic }  alt={ value.user_username }></img>
+            <p className='titleP'>Title: { value.post_title }</p>
+            <p className='usernameP'>By: { value.user_username }</p>
           </div>
         </Link>
 
@@ -97,17 +97,24 @@ class Dashboard extends Component {
     });
 
     return (
-      <div>
+      <div className='dashboardbox'>
         <NavBar/>
-        Dashboard Component
-        <input onChange={ (e) => this.handleInputSearchItem(e.target.value) } placeholder='Search item'></input>
-
-        <button onClick={ () =>  this.handleGetPost() }>Search</button>
-        <button onClick={ () =>  this.handleReset() }>Reset</button>
-
-        <div>
-          { displayPosts }
+          <div className='innerdashboardbox'>
+            <div className='dashboard_search_box'>
+              <input onChange={ (e) => this.handleInputSearchItem(e.target.value) } placeholder='Search item'></input>
+              <button onClick={ () =>  this.handleGetPost() }>
+                <i class='fas fa-search'></i>
+              </button>  
+              <button onClick={ () =>  this.handleReset() }>
+                <i class='fas fa-undo'></i>
+              </button>
+            </div>
+            
+          <div>
+            { displayPosts }
+          </div>
         </div>
+        
       </div>
     );
   }

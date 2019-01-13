@@ -1,1 +1,40 @@
 @import '../../global.scss';
+
+
+.navbarBox {
+  background-color: map-get($colors , lightPink);
+  // border: 2px solid red;
+  height: 99vh;
+  width: 5vw;
+  float: left;
+  position: sticky;
+  top: 0;
+
+  .profileBox {
+    // border: 2px solid blue;
+    text-align: center;
+    img {
+      border: 1px solid blue;
+      border-radius: 50%;
+      height: 70px;
+      width: 70px;
+    }
+
+  }
+
+  .button1 {
+    // border: 1px solid blue;
+    height: 70px;
+    width: 70px;
+    margin-top: 15px;
+  }
+
+  .button2 {
+    // border: 1px solid blue;
+    height: 70px;
+    width: 70px;
+    margin-top: 68vh;
+  }
+
+
+}
