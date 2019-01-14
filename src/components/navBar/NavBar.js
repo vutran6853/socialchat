@@ -21,19 +21,19 @@ class NavBar extends Component {
 
         <Link to='/dashboard'>
           <button className='button1'>
-            <i class='fas fa-home'></i>
+            <i className='fas fa-home'></i>
           </button>
         </Link>
 
         <Link to='/new'>
           <button className='button1'>
-            <i class='fa fa-plus-circle'></i>
+            <i className='fa fa-plus-circle'></i>
           </button>
         </Link>
 
         <Link to='/'>
           <button className='button2'>
-            <i class='fas fa-sign-out-alt'></i>
+            <i className='fas fa-sign-out-alt'></i>
           </button>
         </Link>
 

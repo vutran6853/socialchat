@@ -36,6 +36,7 @@ class Post extends Component {
             <p>Title: { value.post_title }</p>
             <p>userName: { value.user_username }</p>
             <img src={ value.user_profile_pic } alt={ value.user_username }></img>
+            <img src={ value.post_img } alt={ value.post_img }></img>
             <p>post_content: { value.post_content }</p>
           </div>
       )

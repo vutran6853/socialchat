@@ -1,1 +1,43 @@
 @import '../../global.scss';
+
+.formBox {
+  border: 2px solid black;
+  height: 99vh;
+  // margin-left: 40vw;
+
+  .innerFormBox {
+    border: 2px solid black;
+    margin-left: 25vw;
+    margin-top: 15vh;
+    // margin-bottom: 20vh;
+    height: 55rem;
+    width: 70rem;
+    text-align: center;
+
+    h3 {
+      text-align: left;
+      margin: 10px;
+    }
+
+
+
+    .innerFormInputBox {
+      border: 2px solid black;
+      // width: 70rem;
+      p {
+        text-align: left;
+        margin-left: 5rem;
+        margin-bottom: 0px;
+      }
+      input {
+        border: 2px solid black;
+        width: 60rem;
+      }
+  
+      textarea {
+        width: 60rem;
+        height: 5rem;
+      }
+    }
+  }
+}
