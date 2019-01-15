@@ -4,7 +4,7 @@
 .navbarBox {
   background-color: map-get($colors , lightPink);
   // border: 2px solid red;
-  height: 99vh;
+  height: 100vh;
   width: 5vw;
   float: left;
   position: sticky;
@@ -35,6 +35,349 @@
     width: 70px;
     margin-top: 68vh;
   }
+}
 
+/// 2k screen
+@media(max-width: $destop1440MinWidth) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 100vh;
+    width: 5vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    // .profileBox {
+    //   // border: 2px solid blue;
+    //   text-align: center;
+    //   img {
+    //     border: 1px solid blue;
+    //     border-radius: 50%;
+    //     height: 70px;
+    //     width: 70px;
+    //   }
+  
+    // }
+  
+    // .button1 {
+    //   // border: 1px solid blue;
+    //   height: 70px;
+    //   width: 70px;
+    //   margin-top: 15px;
+    // }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 70px;
+      width: 70px;
+      margin-top: 67vh;
+    }
+  }
+}
 
+////  1024 Screen
+@media(max-width: $destop1024MinWidth) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 100vh;
+    width: 7vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    // .profileBox {
+    //   // border: 2px solid blue;
+    //   text-align: center;
+    //   img {
+    //     border: 1px solid blue;
+    //     border-radius: 50%;
+    //     height: 70px;
+    //     width: 70px;
+    //   }
+  
+    // }
+  
+    // .button1 {
+    //   // border: 1px solid blue;
+    //   height: 70px;
+    //   width: 70px;
+    //   margin-top: 15px;
+    // }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 70px;
+      width: 70px;
+      margin-top: 65.5vh;
+    }
+  }
+}
+
+////  iPad screen size
+@media(max-width: 768px) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 99.9vh;
+    width: 9vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    // .profileBox {
+    //   // border: 2px solid blue;
+    //   text-align: center;
+    //   img {
+    //     border: 1px solid blue;
+    //     border-radius: 50%;
+    //     height: 70px;
+    //     width: 70px;
+    //   }
+  
+    // }
+  
+    // .button1 {
+    //   // border: 1px solid blue;
+    //   height: 70px;
+    //   width: 70px;
+    //   margin-top: 15px;
+    // }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 70px;
+      width: 70px;
+      margin-top: 65.5vh;
+    }
+  }
+}
+
+//// Galaxy Landscape
+@media(max-width: $Moblie640MaxWidth) and (max-height: $Moblie360MaxHeight) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 99.9vh;
+    width: 9vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    .profileBox {
+      // border: 2px solid blue;
+      text-align: center;
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+      }
+    }
+  
+    .button1 {
+      // border: 1px solid blue;
+      height: 55px;
+      width: 55px;
+      margin-top: 15px;
+    }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 55px;
+      width: 55px;
+      margin-top: 18vh;
+    }
+  }
+}
+
+////  pixel screen size
+@media(max-width: $Moblie411MaxWidth)  {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 100vh;
+    width: 12vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    .profileBox {
+      // border: 2px solid blue;
+      text-align: center;
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  
+    .button1 {
+      // border: 1px solid blue;
+      height: 45px;
+      width: 45px;
+      margin-top: 15px;
+    }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 45px;
+      width: 45px;
+      margin-top: 67vh;
+    }
+  }
+}
+
+////  Iphone 6/7/8 Plus Portrait
+@media(min-width: $Moblie414MinWidth) and (max-height: $Moblie736MaxHeight) and (orientation: portrait) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 100vh;
+    width: 12vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    .profileBox {
+      // border: 2px solid blue;
+      text-align: center;
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  
+    .button1 {
+      // border: 1px solid blue;
+      height: 45px;
+      width: 45px;
+      margin-top: 15px;
+    }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 45px;
+      width: 45px;
+      margin-top: 63vh;
+    }
+  }
+}
+
+//// Iphone 6/7/8 Plus Landscape View
+@media(min-width: $Moblie736MinWidth) and (max-height: $Moblie414MaxHeight) and (orientation: landscape) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 99.9vh;
+    width: 9vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    .profileBox {
+      // border: 2px solid blue;
+      text-align: center;
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+      }
+    }
+  
+    .button1 {
+      // border: 1px solid blue;
+      height: 55px;
+      width: 55px;
+      margin-top: 15px;
+    }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 55px;
+      width: 55px;
+      margin-top: 18vh;
+    }
+  }
+}
+
+////  Iphone 6/7/8 Portrait
+@media(min-width: $Moblie375MinWidth) and (max-height: $Moblie667MaxHeight) and (orientation: portrait) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 100vh;
+    width: 12vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    .profileBox {
+      // border: 2px solid blue;
+      text-align: center;
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  
+    .button1 {
+      // border: 1px solid blue;
+      height: 45px;
+      width: 45px;
+      margin-top: 15px;
+    }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 45px;
+      width: 45px;
+      margin-top: 60vh;
+    }
+  }
+}
+
+//// Iphone 6/7/8 Landscape View
+@media(min-width: $Moblie667MinWidth) and (max-height: $Moblie375MaxHeight) and (orientation: landscape) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 99.9vh;
+    width: 9vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    .profileBox {
+      // border: 2px solid blue;
+      text-align: center;
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+      }
+    }
+  
+    .button1 {
+      // border: 1px solid blue;
+      height: 55px;
+      width: 55px;
+      margin-top: 15px;
+    }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 55px;
+      width: 55px;
+      margin-top: 18vh;
+    }
+  }
 }

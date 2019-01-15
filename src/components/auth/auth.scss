@@ -63,6 +63,7 @@
   }
 }
 
+////  1024 Screen
 @media(max-width: $destop1024MinWidth) {
   .authMainBox {
     background-color: map-get($colors , lightPink);

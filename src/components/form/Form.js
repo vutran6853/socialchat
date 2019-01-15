@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import css from './form.scss';
 import NavBar from '../navBar/NavBar';
+import noIMage from '../../image/No_Image_Available.jpg';
+
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
-const noIMage = require('../../image/No_Image_Available.jpg')
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -47,7 +48,7 @@ class Form extends Component {
 
   render() {
     // console.log('Form props', this.props.userReducer)
-    console.log(this.state);
+    // console.log(this.state);
     let imgSrc = this.state.imageUrl ? this.state.imageUrl : noIMage;
     return (
       <div className='formBox'>
@@ -59,21 +60,19 @@ class Form extends Component {
               <input name='title' onChange={ this.handleInputForm } placeholder='title'></input>
               <br/>
 
-              <div>
-              <div style={ { backgroundImage: `url('${ imgSrc }') ` } } alt='post'></div>
-                Placeholder for Image preview Box
-              </div>
+              <div className='imagePreviewBox' style={ { backgroundImage: `url('${ imgSrc }') ` } } alt='post'></div>
 
               <p>Image Url:</p>
-              <input name='imageUrl' onChange={ this.handleInputForm }  placeholder='imageUrl'></input>
+              <input name='imageUrl' onChange={ this.handleInputForm }   placeholder='imageUrl'></input>
               <br/>
 
               <p>Content:</p>
               <textarea name='content' onChange={ this.handleInputForm } placeholder='content'></textarea>
               <br/>
 
-              <button onClick={ () =>  this.handleSubmitPost() }>Search</button>
+              <button onClick={ () =>  this.handleSubmitPost() }>Post</button>
             </div>
+
           </div>
 
       </div>
