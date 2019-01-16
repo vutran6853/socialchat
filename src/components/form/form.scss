@@ -108,7 +108,7 @@
     // margin-left: 40vw;
   
     .innerFormBox {
-      // border: 2px solid red;
+      // border: 3px solid red;
       // margin-left: 215vw;
       // margin-top: 102vh;
       // margin-bottom: 20vh;
@@ -194,6 +194,72 @@
         textarea {
           width: 25rem;
           height: 5rem;
+        }
+      }
+    }
+  }
+}
+
+//// Galaxy Portrait
+@media(max-width: $Moblie360MaxWidth) and (max-height: $Moblie640MaxHeight) {
+  .formBox {
+    // border: 1px solid black;
+    height: 100vh;
+    // margin-left: 40vw;
+  
+    .innerFormBox {
+      // border: 2px solid red;
+      margin-left: 15vw;
+      margin-top: 15vh;
+      // margin-bottom: 20vh;
+      height: 30rem;
+      width: 18rem !important;
+      // float: left;
+      text-align: center;
+      box-shadow: 5px 10px #888888;
+  
+  
+      .imagePreviewBox {
+        // border: 2px solid red;
+        height: 20vh;
+        width: 55vw;
+        // float: right;
+        // display: inline-flex;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        margin-left: 2rem !important;
+        // margin-top: 5rem;
+      }
+
+      h3 {
+        // border: 1px solid black;
+        font-size: 15px;
+        // margin: 0;
+      }
+  
+      .innerFormInputBox {
+        // border: 2px solid black;
+        // margin: 0;
+        // width: 70rem;
+        // float: right;
+
+  
+        p {
+          // border: 2px solid black;
+          text-align: left;
+          margin-left: 1.5rem !important;
+          margin-bottom: 5px;
+        }
+
+        input {
+          // border: 5px solid black;
+          width: 15rem;
+        }
+    
+        textarea {
+          // border: 2px solid black;
+          width: 15rem;
+          height: 2rem;
         }
       }
     }
@@ -540,7 +606,7 @@
       margin-left: 15vw;
       margin-top: 1vh;
       // margin-bottom: 20vh;
-      height: 20rem;
+      height: 22rem;
       width: 30rem;
       // float: left;
       text-align: center;
@@ -549,13 +615,13 @@
   
       .imagePreviewBox {
         // border: 2px solid red;
-        height: 20vh;
-        width: 15vw;
+        height: 30vh;
+        width: 25vw;
         // float: right;
         // display: inline-flex;
         // background-repeat: no-repeat;
         // background-size: cover;
-        margin-left: 11rem;
+        margin-left: 9.5rem;
         // margin-top: 5rem;
       }
 
@@ -586,6 +652,72 @@
         textarea {
           // border: 2px solid black;
           width: 25rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}
+
+//// IphoneX Portrait
+@media(min-width: $Moblie375MinWidth) and (max-height: $Moblie812MaxHeight) and (orientation: portrait) {
+  .formBox {
+    // border: 1px solid black;
+    height: 100vh;
+    // margin-left: 40vw;
+  
+    .innerFormBox {
+      // border: 2px solid red;
+      margin-left: 15vw;
+      margin-top: 15vh;
+      // margin-bottom: 20vh;
+      height: 30rem;
+      width: 18rem;
+      // float: left;
+      text-align: center;
+      box-shadow: 5px 10px #888888;
+  
+  
+      .imagePreviewBox {
+        // border: 2px solid red;
+        height: 20vh;
+        width: 55vw;
+        // float: right;
+        // display: inline-flex;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        margin-left: 2rem;
+        // margin-top: 5rem;
+      }
+
+      h3 {
+        // border: 1px solid black;
+        font-size: 15px;
+        // margin: 0;
+      }
+  
+      .innerFormInputBox {
+        // border: 2px solid black;
+        // margin: 0;
+        // width: 70rem;
+        // float: right;
+
+  
+        p {
+          // border: 2px solid black;
+          text-align: left;
+          margin-left: 1.5rem;
+          margin-bottom: 5px;
+        }
+
+        input {
+          // border: 5px solid black;
+          width: 15rem;
+        }
+    
+        textarea {
+          // border: 2px solid black;
+          width: 15rem;
           height: 2rem;
         }
       }

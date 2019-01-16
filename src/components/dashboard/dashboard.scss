@@ -34,8 +34,8 @@
   img {
     border: 1px solid blue;
     border-radius: 50%;
-    height: 70px;
-    width: 70px;
+    height: 40px;
+    width: 40px;
     float: right;
   }
 
@@ -51,5 +51,533 @@
 
   .usernameP {
     float: right;
+  }
+}
+
+/// 2k screen
+@media(max-width: $destop1440MinWidth) {
+  .dashboardbox {
+    // border: 2px solid blue;
+      // float: right;
+  
+    .innerdashboardbox {
+      // border: 2px solid blue;
+      margin-left: 40vh;
+      margin-right: 40vh;
+    }
+  
+    .dashboard_search_box {
+      // border: 5px solid black;
+      margin-top: 1vw;
+      padding: 1vw;
+      box-shadow: 5px 5px #888888;
+  
+      input {
+        border: 1px solid black;
+        // display: inline-block;
+        width: 33vw;
+      }
+    }
+  }
+  
+  .dashboardPostBox {
+    // border: 2px solid black;
+    margin: 10px;
+    box-shadow: 5px 5px #888888;
+    height: 150px;
+  
+    img {
+      // border: 2px solid blue;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    // float: right !important;
+    }
+  
+    .titleP {
+      // border: 2px solid black;
+      display: inline-flex;
+      // margin-top: 10px;
+      // margin-left: 10px;
+  
+      height: 10vh;
+      width: 27vw;
+    }
+  
+    .usernameP {
+      float: right;
+    }
+  }
+}
+
+////  1024 Screen
+@media(max-width: $destop1024MinWidth) {
+  .dashboardbox {
+    // border: 2px solid blue;
+      // float: right;
+  
+    .innerdashboardbox {
+      // border: 2px solid blue;
+      margin-left: 30vh;
+      margin-right: 40vh;
+    }
+  
+    .dashboard_search_box {
+      // border: 5px solid black;
+      margin-top: 1vw;
+      margin-left: 1vw;
+      width: 30rem;
+      padding: 1vw;
+      box-shadow: 5px 5px #888888;
+  
+      input {
+        border: 1px solid black;
+        // display: inline-block;
+        width: 33vw;
+      }
+    }
+  }
+  
+  .dashboardPostBox {
+    // border: 2px solid black;
+    margin: 10px;
+    box-shadow: 5px 5px #888888;
+    height: 150px;
+    width: 30rem;
+  
+    img {
+      border: 2px solid blue;
+      border-radius: 50%;
+      height: 70px;
+      width: 70px;
+      // float: right !important;
+    }
+  
+    .titleP {
+      // border: 2px solid black;
+      display: inline-flex;
+      // margin-top: 10px;
+      // margin-left: 10px;
+  
+      height: 10vh;
+      width: 27vw;
+    }
+  
+    .usernameP {
+      float: right;
+    }
+  }
+}
+
+////  iPad screen size
+@media(max-width: 768px) {
+  .dashboardbox {
+    // border: 2px solid blue;
+      // float: right;
+  
+    .innerdashboardbox {
+      // border: 2px solid blue;
+      margin-left: 15vh;
+      margin-right: 40vh;
+    }
+  
+    .dashboard_search_box {
+      // border: 5px solid black;
+      margin-top: 1vw;
+      margin-left: 1vw;
+      width: 30rem;
+      padding: 1vw;
+      box-shadow: 5px 5px #888888;
+  
+      input {
+        // border: 1px solid black;
+        // display: inline-block;
+        width: 33vw;
+      }
+    }
+  }
+  
+  .dashboardPostBox {
+    // border: 2px solid black;
+    margin: 10px;
+    box-shadow: 5px 5px #888888;
+    height: 150px;
+    width: 30rem;
+  
+    img {
+      border: 2px solid blue;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    // float: right !important;
+    }
+  
+    .titleP {
+      // border: 2px solid black;
+      display: inline-flex;
+      // margin-top: 10px;
+      // margin-left: 10px;
+  
+      height: 10vh;
+      width: 27vw;
+    }
+  
+    .usernameP {
+      float: right;
+    }
+  }
+}
+
+//// Galaxy Portrait
+@media(max-width: $Moblie360MaxWidth) and (max-height: $Moblie640MaxHeight) {
+  .dashboardbox {
+    // border: 2px solid blue;
+      // float: right;
+  
+    .innerdashboardbox {
+      // border: 2px solid blue;
+      margin-left: 10vh;
+      margin-right: 40vh;
+    }
+
+    .dashboard_search_box {
+      // border: 5px solid black;
+      margin-top: 1vw;
+      margin-left: 1vw;
+      width: 15rem;
+      padding: 1vw;
+      box-shadow: 5px 5px #888888;
+  
+      input {
+        // border: 1px solid black;
+        // display: inline-block;
+        width: 33vw;
+      }
+    }
+  }
+
+  .dashboardPostBox {
+    // border: 2px solid black;
+    margin: 10px;
+    box-shadow: 5px 5px #888888;
+    height: 150px;
+    width: 15rem;
+  
+    img {
+      border: 1px solid blue;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    // float: right !important;
+    }
+
+    .titleP {
+      // border: 2px solid black;
+      display: inline-flex;
+      // margin-top: 10px;
+      // margin-left: 10px;
+  
+      height: 10vh;
+      width: 27vw;
+    }
+  
+    .usernameP {
+      float: right;
+    }
+  }
+}
+
+////  pixel screen size
+@media(max-width: $Moblie411MaxWidth)  {
+  .dashboardbox {
+    // border: 2px solid blue;
+      // float: right;
+  
+    .innerdashboardbox {
+      // border: 2px solid blue;
+      margin-left: 10vh;
+      margin-right: 40vh;
+    }
+
+    .dashboard_search_box {
+      // border: 5px solid black;
+      margin-top: 1vw;
+      margin-left: 1vw;
+      width: 15rem;
+      padding: 1vw;
+      box-shadow: 5px 5px #888888;
+  
+      input {
+        // border: 1px solid black;
+        // display: inline-block;
+        width: 33vw;
+      }
+    }
+  }
+
+  .dashboardPostBox {
+    // border: 2px solid black;
+    margin: 10px;
+    box-shadow: 5px 5px #888888;
+    height: 150px;
+    width: 15rem;
+  
+    img {
+      border: 1px solid blue;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    // float: right !important;
+    }
+
+    .titleP {
+      // border: 2px solid black;
+      display: inline-flex;
+      // margin-top: 10px;
+      // margin-left: 10px;
+  
+      height: 10vh;
+      width: 27vw;
+    }
+  
+    .usernameP {
+      float: right;
+    }
+  }
+}
+
+////  Iphone 6/7/8 Plus Portrait
+@media(min-width: $Moblie414MinWidth) and (max-height: $Moblie736MaxHeight) and (orientation: portrait) {
+  .dashboardbox {
+    // border: 2px solid blue;
+      // float: right;
+  
+    .innerdashboardbox {
+      // border: 2px solid blue;
+      margin-left: 10vh;
+      margin-right: 40vh;
+    }
+
+    .dashboard_search_box {
+      // border: 5px solid black;
+      margin-top: 1vw;
+      margin-left: 1vw;
+      width: 15rem;
+      padding: 1vw;
+      box-shadow: 5px 5px #888888;
+  
+      input {
+        // border: 1px solid black;
+        // display: inline-block;
+        width: 33vw;
+      }
+    }
+  }
+
+  .dashboardPostBox {
+    // border: 2px solid black;
+    margin: 10px;
+    box-shadow: 5px 5px #888888;
+    height: 150px;
+    width: 15rem;
+  
+    img {
+      border: 1px solid blue;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    // float: right !important;
+    }
+
+    .titleP {
+      // border: 2px solid black;
+      display: inline-flex;
+      // margin-top: 10px;
+      // margin-left: 10px;
+  
+      height: 10vh;
+      width: 27vw;
+    }
+  
+    .usernameP {
+      float: right;
+    }
+  }
+}
+
+//// Iphone 6/7/8 Plus Landscape View
+@media(min-width: $Moblie736MinWidth) and (max-height: $Moblie414MaxHeight) and (orientation: landscape) {
+  .dashboardbox {
+    // border: 2px solid blue;
+      // float: right;
+  
+    .innerdashboardbox {
+      // border: 2px solid blue;
+      margin-left: 15vw;
+      margin-right: 40vh;
+    }
+
+    .dashboard_search_box {
+      // border: 5px solid black;
+      margin-top: 1vw;
+      // margin-left: 10vw;
+      width: 30rem;
+      padding: 1vw;
+      box-shadow: 5px 5px #888888;
+  
+      input {
+        // border: 1px solid black;
+        // display: inline-block;
+        width: 33vw;
+      }
+    }
+  }
+
+  .dashboardPostBox {
+    // border: 2px solid black;
+    margin: 10px;
+    box-shadow: 5px 5px #888888;
+    height: 150px;
+    width: 30rem;
+  
+    img {
+      border: 1px solid blue;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    // float: right !important;
+    }
+
+    .titleP {
+      // border: 2px solid black;
+      display: inline-flex;
+      // margin-top: 10px;
+      // margin-left: 10px;
+  
+      height: 10vh;
+      width: 27vw;
+    }
+  
+    .usernameP {
+      float: right;
+    }
+  }
+}
+
+////  Iphone 6/7/8 Portrait
+@media(min-width: $Moblie375MinWidth) and (max-height: $Moblie667MaxHeight) and (orientation: portrait) {
+  .dashboardbox {
+    // border: 2px solid blue;
+      // float: right;
+  
+    .innerdashboardbox {
+      // border: 2px solid blue;
+      margin-left: 10vh;
+      margin-right: 40vh;
+    }
+
+    .dashboard_search_box {
+      // border: 5px solid black;
+      margin-top: 1vw;
+      margin-left: 1vw;
+      width: 15rem;
+      padding: 1vw;
+      box-shadow: 5px 5px #888888;
+  
+      input {
+        // border: 1px solid black;
+        // display: inline-block;
+        width: 33vw;
+      }
+    }
+  }
+
+  .dashboardPostBox {
+    border: 2px solid black;
+    margin: 10px;
+    box-shadow: 5px 5px #888888;
+    height: 130px;
+    width: 15rem;
+  
+    img {
+      border: 1px solid blue;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    // float: right !important;
+    }
+
+    .titleP {
+      // border: 2px solid black;
+      display: inline-flex;
+      // margin-top: 10px;
+      // margin-left: 10px;
+  
+      height: 10vh;
+      width: 27vw;
+    }
+  
+    .usernameP {
+      float: right;
+    }
+  }
+}
+
+//// Iphone 6/7/8 Landscape View
+@media(min-width: $Moblie667MinWidth) and (max-height: $Moblie375MaxHeight) and (orientation: landscape) {
+  .dashboardbox {
+    // border: 2px solid blue;
+      // float: right;
+  
+    .innerdashboardbox {
+      // border: 2px solid blue;
+      margin-left: 15vw;
+      margin-right: 40vh;
+    }
+
+    .dashboard_search_box {
+      // border: 5px solid black;
+      margin-top: 1vw;
+      // margin-left: 10vw;
+      width: 30rem;
+      padding: 1vw;
+      box-shadow: 5px 5px #888888;
+  
+      input {
+        // border: 1px solid black;
+        // display: inline-block;
+        width: 33vw;
+      }
+    }
+  }
+
+  .dashboardPostBox {
+    // border: 2px solid black;
+    margin: 10px;
+    box-shadow: 5px 5px #888888;
+    height: 150px;
+    width: 30rem;
+  
+    img {
+      border: 1px solid blue;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    // float: right !important;
+    }
+
+    .titleP {
+      // border: 2px solid black;
+      display: inline-flex;
+      // margin-top: 10px;
+      // margin-left: 10px;
+  
+      height: 10vh;
+      width: 27vw;
+    }
+  
+    .usernameP {
+      float: right;
+    }
   }
 }

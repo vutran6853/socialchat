@@ -15,6 +15,7 @@ const { userLogin, userRegister, userByIDPost, userLogout,
 app.use(cors());
 app.use(json());
 
+
 //// Init Session setting. This will save userID in browser 
 // app.use(session({
 //   secret: process.env.SESSION_SECRET,

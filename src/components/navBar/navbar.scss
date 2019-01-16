@@ -71,7 +71,7 @@
       // border: 1px solid blue;
       height: 70px;
       width: 70px;
-      margin-top: 67vh;
+      margin-top: 65vh;
     }
   }
 }
@@ -154,6 +154,44 @@
   }
 }
 
+//// Galaxy Portrait
+@media(max-width: $Moblie360MaxWidth) and (max-height: $Moblie640MaxHeight) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 100vh;
+    width: 13vw !important;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    .profileBox {
+      // border: 2px solid blue;
+      text-align: center;
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  
+    .button1 {
+      // border: 1px solid blue;
+      height: 45px;
+      width: 45px;
+      margin-top: 15px;
+    }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 45px;
+      width: 45px;
+      margin-top: 61.5vh !important;
+    }
+  }
+}
+
 //// Galaxy Landscape
 @media(max-width: $Moblie640MaxWidth) and (max-height: $Moblie360MaxHeight) {
   .navbarBox {
@@ -187,7 +225,7 @@
       // border: 1px solid blue;
       height: 55px;
       width: 55px;
-      margin-top: 18vh;
+      margin-top: 10vh;
     }
   }
 }
@@ -225,7 +263,7 @@
       // border: 1px solid blue;
       height: 45px;
       width: 45px;
-      margin-top: 67vh;
+      margin-top: 70vh;
     }
   }
 }
@@ -263,7 +301,7 @@
       // border: 1px solid blue;
       height: 45px;
       width: 45px;
-      margin-top: 63vh;
+      margin-top: 66.5vh !important;
     }
   }
 }
@@ -301,7 +339,7 @@
       // border: 1px solid blue;
       height: 55px;
       width: 55px;
-      margin-top: 18vh;
+      margin-top: 28vh;
     }
   }
 }
@@ -339,7 +377,7 @@
       // border: 1px solid blue;
       height: 45px;
       width: 45px;
-      margin-top: 60vh;
+      margin-top: 63vh !important;
     }
   }
 }
@@ -377,7 +415,83 @@
       // border: 1px solid blue;
       height: 55px;
       width: 55px;
-      margin-top: 18vh;
+      margin-top: 21vh;
+    }
+  }
+}
+
+//// IphoneX landscape View
+@media(min-width: $Moblie812MinWidth) and (max-height: $Moblie375MaxHeight) and (orientation: landscape) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 99.9vh;
+    width: 9vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    .profileBox {
+      // border: 2px solid blue;
+      text-align: center;
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+      }
+    }
+  
+    .button1 {
+      // border: 1px solid blue;
+      height: 65px;
+      width: 65px;
+      margin-top: 15px;
+    }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 65px;
+      width: 65px;
+      margin-top: 13vh;
+    }
+  }
+}
+
+//// IphoneX Portrait
+@media(min-width: $Moblie375MinWidth) and (max-height: $Moblie812MaxHeight) and (orientation: portrait) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 100vh;
+    width: 12vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    .profileBox {
+      // border: 2px solid blue;
+      text-align: center;
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  
+    .button1 {
+      // border: 1px solid blue;
+      height: 45px;
+      width: 45px;
+      margin-top: 15px;
+    }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 45px;
+      width: 45px;
+      margin-top: 69.5vh;
     }
   }
 }

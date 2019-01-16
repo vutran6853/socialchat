@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { getUserInfo } from '../../duck/reducer';
 import Axios from 'axios';
 import css from './navbar.scss'
+
 class NavBar extends Component {
   constructor(props) {
     super(props);

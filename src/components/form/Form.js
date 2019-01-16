@@ -63,7 +63,7 @@ class Form extends Component {
               <div className='imagePreviewBox' style={ { backgroundImage: `url('${ imgSrc }') ` } } alt='post'></div>
 
               <p>Image Url:</p>
-              <input name='imageUrl' onChange={ this.handleInputForm }   placeholder='imageUrl'></input>
+              <input name='imageUrl' onChange={ this.handleInputForm } type='file'  placeholder='imageUrl'></input>
               <br/>
 
               <p>Content:</p>

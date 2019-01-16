@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavBar from '../navBar/NavBar';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
@@ -43,6 +44,7 @@ class Post extends Component {
     });
     return (
       <div>
+        <NavBar/>
         Posts Component
         { displaySinglePosts }
       </div>
