@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { getUserInfo } from '../../duck/reducer';
 import Axios from 'axios';
 import css from './auth.scss';
-
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
 class Auth extends Component {

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import css from './form.scss';
 import NavBar from '../navBar/NavBar';
 import noIMage from '../../image/No_Image_Available.jpg';
+import ProfilePage from '../ProfilePage';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
@@ -53,6 +54,7 @@ class Form extends Component {
     return (
       <div className='formBox'>
         <NavBar/>
+
           <div className='innerFormBox'>
             <h3>New Post</h3>
             <div className='innerFormInputBox'>
@@ -60,10 +62,8 @@ class Form extends Component {
               <input name='title' onChange={ this.handleInputForm } placeholder='title'></input>
               <br/>
 
-              <div className='imagePreviewBox' style={ { backgroundImage: `url('${ imgSrc }') ` } } alt='post'></div>
-
-              <p>Image Url:</p>
-              <input name='imageUrl' onChange={ this.handleInputForm } type='file'  placeholder='imageUrl'></input>
+              {/* <p>Image Url:</p> */}
+                <ProfilePage/>
               <br/>
 
               <p>Content:</p>
