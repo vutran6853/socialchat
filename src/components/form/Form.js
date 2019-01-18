@@ -14,13 +14,14 @@ class Form extends Component {
       title: '',
       imageUrl: '',
       content: '',
+      urlImageData: '',
      }
   }
 
   handleSubmitPost = () => {
     let { id } = this.props.userReducer;
     let contents = { title: this.state.title, 
-                    imageUrl: this.state.imageUrl, 
+                    imageUrl: this.props.userReducer.urlImage, 
                     content: this.state.content }
     
     if(contents.title !== '' && contents.content !== '') {
@@ -47,9 +48,13 @@ class Form extends Component {
     this.setState({ [event.target.name]: event.target.value})
   }
 
+  handleGetUrlFromImage = (value) => {
+    console.log('value::', value);
+  } 
+
   render() {
     // console.log('Form props', this.props.userReducer)
-    // console.log(this.state);
+    // console.log(this.props.userReducer.urlImage);
     let imgSrc = this.state.imageUrl ? this.state.imageUrl : noIMage;
     return (
       <div className='formBox'>
@@ -63,7 +68,7 @@ class Form extends Component {
               <br/>
 
               {/* <p>Image Url:</p> */}
-                <ProfilePage/>
+                <ProfilePage data={ this.handleGetUrlFromImage }/>
               <br/>
 
               <p>Content:</p>

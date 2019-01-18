@@ -34,7 +34,7 @@ class Auth extends Component {
     .then((response) => response.json())
     .then((response) => {
       // if(response[0] !== undefined) {
-        console.log('response[0]', response);
+        // console.log('response[0]', response);
         // console.log(this.props);
         this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
         this.props.history.push('/dashboard')
@@ -68,7 +68,7 @@ class Auth extends Component {
           <input onChange={ (e) => this.handleInputUserName(e.target.value, 'username') } placeholder='Enter your username'></input>
           
           <h3>Password</h3>
-          <input onChange={ (e) => this.handleInputUserPassword(e.target.value, 'passwordname') } placeholder='Enter your password'></input>
+          <input onChange={ (e) => this.handleInputUserPassword(e.target.value, 'passwordname') } type='password' placeholder='Enter your password'></input>
           
           <br/>
           <button onClick={ () =>  this.handleLogin() }>login</button>

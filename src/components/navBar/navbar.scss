@@ -24,60 +24,24 @@
 
   .button1 {
     // border: 1px solid blue;
-    height: 70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
     margin-top: 15px;
+    margin-left: 10px;
   }
 
   .button2 {
     // border: 1px solid blue;
-    height: 70px;
-    width: 70px;
-    margin-top: 68vh;
+    height: 100px;
+    width: 100px;
+    margin-top: 64vh;
+    margin-left: 10px;
+
   }
 }
 
 /// 2k screen
 @media(max-width: $destop1440MinWidth) {
-  .navbarBox {
-    background-color: map-get($colors , lightPink);
-    // border: 2px solid red;
-    height: 100vh;
-    width: 5vw;
-    float: left;
-    position: sticky;
-    top: 0;
-  
-    // .profileBox {
-    //   // border: 2px solid blue;
-    //   text-align: center;
-    //   img {
-    //     border: 1px solid blue;
-    //     border-radius: 50%;
-    //     height: 70px;
-    //     width: 70px;
-    //   }
-  
-    // }
-  
-    // .button1 {
-    //   // border: 1px solid blue;
-    //   height: 70px;
-    //   width: 70px;
-    //   margin-top: 15px;
-    // }
-  
-    .button2 {
-      // border: 1px solid blue;
-      height: 70px;
-      width: 70px;
-      margin-top: 65vh;
-    }
-  }
-}
-
-////  1024 Screen
-@media(max-width: $destop1024MinWidth) {
   .navbarBox {
     background-color: map-get($colors , lightPink);
     // border: 2px solid red;
@@ -99,12 +63,51 @@
   
     // }
   
-    // .button1 {
-    //   // border: 1px solid blue;
-    //   height: 70px;
-    //   width: 70px;
-    //   margin-top: 15px;
+    .button1 {
+      // border: 1px solid blue;
+      height: 70px;
+      width: 70px;
+      margin-top: 15px;
+    }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 70px;
+      width: 70px;
+      margin-top: 63vh;
+    }
+  }
+}
+
+////  1024 Screen
+@media(max-width: $destop1024MinWidth) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 2px solid red;
+    height: 100vh;
+    width: 9vw;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    // .profileBox {
+    //   // border: 2px solid blue;
+    //   text-align: center;
+    //   img {
+    //     border: 1px solid blue;
+    //     border-radius: 50%;
+    //     height: 70px;
+    //     width: 70px;
+    //   }
+  
     // }
+  
+    .button1 {
+      // border: 1px solid blue;
+      height: 70px;
+      width: 70px;
+      margin-top: 15px;
+    }
   
     .button2 {
       // border: 1px solid blue;
@@ -121,7 +124,7 @@
     background-color: map-get($colors , lightPink);
     // border: 2px solid red;
     height: 99.9vh;
-    width: 9vw;
+    width: 12vw;
     float: left;
     position: sticky;
     top: 0;
@@ -160,12 +163,13 @@
     background-color: map-get($colors , lightPink);
     // border: 2px solid red;
     height: 100vh;
-    width: 13vw !important;
+    width: 15vw !important;
     float: left;
     position: sticky;
     top: 0;
   
     .profileBox {
+      font-size: 10px;
       // border: 2px solid blue;
       text-align: center;
       img {
@@ -181,13 +185,16 @@
       height: 45px;
       width: 45px;
       margin-top: 15px;
+      margin-left: 3px;
     }
   
     .button2 {
       // border: 1px solid blue;
       height: 45px;
       width: 45px;
-      margin-top: 61.5vh !important;
+      margin-top: 60.5vh !important;
+      margin-left: 3px;
+
     }
   }
 }
@@ -198,13 +205,14 @@
     background-color: map-get($colors , lightPink);
     // border: 2px solid red;
     height: 99.9vh;
-    width: 9vw;
+    width: 12vw;
     float: left;
     position: sticky;
     top: 0;
   
     .profileBox {
       // border: 2px solid blue;
+      
       text-align: center;
       img {
         border: 1px solid blue;
@@ -236,7 +244,7 @@
     background-color: map-get($colors , lightPink);
     // border: 2px solid red;
     height: 100vh;
-    width: 12vw;
+    width: 15vw;
     float: left;
     position: sticky;
     top: 0;
@@ -244,6 +252,8 @@
     .profileBox {
       // border: 2px solid blue;
       text-align: center;
+      font-size: 12px;
+
       img {
         border: 1px solid blue;
         border-radius: 50%;
@@ -257,13 +267,15 @@
       height: 45px;
       width: 45px;
       margin-top: 15px;
+      margin-left: 5px;
     }
   
     .button2 {
       // border: 1px solid blue;
       height: 45px;
       width: 45px;
-      margin-top: 70vh;
+      margin-top: 68vh;
+      margin-left: 5px;
     }
   }
 }
@@ -278,7 +290,8 @@
     float: left;
     position: sticky;
     top: 0;
-  
+    font-size: 10px;
+
     .profileBox {
       // border: 2px solid blue;
       text-align: center;
@@ -292,15 +305,17 @@
   
     .button1 {
       // border: 1px solid blue;
-      height: 45px;
-      width: 45px;
+      height: 35px !important;
+      width: 35px !important;
       margin-top: 15px;
+      margin-left: 5px;
     }
   
     .button2 {
       // border: 1px solid blue;
-      height: 45px;
-      width: 45px;
+      height: 35px !important;
+      width: 35px !important;
+      margin-left: 5px;
       margin-top: 66.5vh !important;
     }
   }
@@ -312,7 +327,7 @@
     background-color: map-get($colors , lightPink);
     // border: 2px solid red;
     height: 99.9vh;
-    width: 9vw;
+    width: 12vw;
     float: left;
     position: sticky;
     top: 0;
@@ -339,7 +354,7 @@
       // border: 1px solid blue;
       height: 55px;
       width: 55px;
-      margin-top: 28vh;
+      margin-top: 22vh;
     }
   }
 }
@@ -357,7 +372,9 @@
   
     .profileBox {
       // border: 2px solid blue;
-      text-align: center;
+      text-align: center;    
+      font-size: 10px;
+
       img {
         border: 1px solid blue;
         border-radius: 50%;
@@ -368,16 +385,16 @@
   
     .button1 {
       // border: 1px solid blue;
-      height: 45px;
-      width: 45px;
+      height: 35px !important;
+      width: 35px !important;
       margin-top: 15px;
     }
   
     .button2 {
       // border: 1px solid blue;
-      height: 45px;
-      width: 45px;
-      margin-top: 63vh !important;
+      height: 35px !important;
+      width: 35px !important;
+      margin-top: 66vh !important;
     }
   }
 }
@@ -388,7 +405,7 @@
     background-color: map-get($colors , lightPink);
     // border: 2px solid red;
     height: 99.9vh;
-    width: 9vw;
+    width: 12vw;
     float: left;
     position: sticky;
     top: 0;
@@ -444,16 +461,16 @@
   
     .button1 {
       // border: 1px solid blue;
-      height: 65px;
-      width: 65px;
+      height: 45px;
+      width: 45px;
       margin-top: 15px;
     }
   
     .button2 {
       // border: 1px solid blue;
-      height: 65px;
-      width: 65px;
-      margin-top: 13vh;
+      height: 45px;
+      width: 45px;
+      margin-top: 20vh !important;
     }
   }
 }
@@ -464,7 +481,7 @@
     background-color: map-get($colors , lightPink);
     // border: 2px solid red;
     height: 100vh;
-    width: 12vw;
+    width: 15vw;
     float: left;
     position: sticky;
     top: 0;

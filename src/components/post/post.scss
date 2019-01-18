@@ -1,1 +1,78 @@
 @import '../../global.scss';
+
+
+.postViewBox {
+  border: 1px solid white;
+  height: 99vh;
+
+  .innerPostBox {
+    border: 1px solid black;
+    height: 50rem;
+    width: 50rem;
+    margin-left: 35vw;
+    margin-top: 12vh;
+    box-shadow: 5px 5px #888888;
+
+    .profileBox {
+      text-align: center;
+
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 70px;
+        width: 70px;
+      }
+    }
+  }
+
+  
+  .innerPostImageBox {
+    // border: 5px solid blue;
+    text-align: center;
+    height: 43rem;
+    width: 50rem;  
+
+    img {
+      height: 30rem;
+      width: 40rem;  
+    }
+
+    p {
+      border: 1px solid black;
+      margin-top: 2rem;
+      box-shadow: 3px 3px #888888;
+      height: 4rem;
+      width: 45rem;
+      margin-left: 3rem;
+    }
+  }
+
+
+  .innderPostThumbBox {
+    // border: 1px solid black;
+    // margin-left: 10px;
+    // display: inline-flex;
+
+    button {
+      // border: 1px solid black;
+      margin-left: 1rem;
+      float: right;
+
+    }
+
+    i {
+      margin-left: 35px;
+      // border: 1px solid black;
+      
+      // height: 40px;
+      // width: 40px;
+    }
+
+    .onHoverEffect:hover {
+      border: 1px solid yellow;
+    }
+    
+  }
+
+
+} 

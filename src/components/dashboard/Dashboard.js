@@ -58,7 +58,7 @@ class Dashboard extends Component {
       })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         this.setState({ posts: response })
         // this.props.history.push('/dashboard')
       })
