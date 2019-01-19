@@ -21,8 +21,8 @@ class Form extends Component {
   handleSubmitPost = () => {
     let { id } = this.props.userReducer;
     let contents = { title: this.state.title, 
-                    imageUrl: this.props.userReducer.urlImage, 
-                    content: this.state.content }
+                     imageUrl: this.props.userReducer.urlImage, 
+                     content: this.state.content }
     
     if(contents.title !== '' && contents.content !== '') {
       fetch(`${ SERVER_URL_ENDPOINT }/api/post/${ id }`, {
@@ -39,8 +39,6 @@ class Form extends Component {
     } else {
       console.log('placeholder for pop up message enter enter');
     }
-
-
   }
 
   handleInputForm = (event) => {
@@ -53,33 +51,25 @@ class Form extends Component {
   } 
 
   render() {
-    // console.log('Form props', this.props.userReducer)
-    // console.log(this.props.userReducer.urlImage);
     let imgSrc = this.state.imageUrl ? this.state.imageUrl : noIMage;
+
     return (
       <div className='formBox'>
         <NavBar/>
-
           <div className='innerFormBox'>
             <h3>New Post</h3>
             <div className='innerFormInputBox'>
               <p>Title:</p>
               <input name='title' onChange={ this.handleInputForm } placeholder='title'></input>
               <br/>
-
-              {/* <p>Image Url:</p> */}
-                <ProfilePage data={ this.handleGetUrlFromImage }/>
+              <ProfilePage data={ this.handleGetUrlFromImage }/>
               <br/>
-
               <p>Content:</p>
               <textarea name='content' onChange={ this.handleInputForm } placeholder='content'></textarea>
               <br/>
-
               <button onClick={ () =>  this.handleSubmitPost() }>Post</button>
             </div>
-
           </div>
-
       </div>
     );
   }

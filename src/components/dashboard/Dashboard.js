@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Navbar from '../navBar/NavBar';
 import { connect } from 'react-redux';
-import css from './dashboard.scss';
 import { Link } from 'react-router-dom';
 import NavBar from '../navBar/NavBar';
+import PropTypes from 'prop-types';
+import { ToastContainer, toast } from 'react-toastify';
+import css from './dashboard.scss';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
@@ -14,13 +15,12 @@ class Dashboard extends Component {
       posts: [],
       searchItem: '',
       userposts: true,
-
      };
   }
   
-  ////  get all post from database function
   componentDidMount() {
     this.handleGetPost()
+    // this.notify()
   }
 
   ////  reset search input field function
@@ -28,14 +28,13 @@ class Dashboard extends Component {
     this.setState({ searchItem: value })
   }
 
+  ////  Get all post By search || nonsearch
   handleGetPost = () => {
     let { id } = this.props.userReducer;
     let { userposts, searchItem } = this.state;
 
     ////  If userposts is true AND there is a search string
     if(userposts === true && searchItem !== '') {
-      // console.log(true);
-
       fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPostBySearch/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -50,8 +49,6 @@ class Dashboard extends Component {
 
       //// If userposts is false AND there is no search string
     } else if(!userposts === false && searchItem == '') {
-      // console.log(true);
-
       fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPostByNoSeach/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -70,6 +67,12 @@ class Dashboard extends Component {
 
   }
 
+  ////  notify message 
+  // notify = () => {
+  //   toast.success(`Welcome back ${ this.props.userReducer.username }`, {
+  //             position: toast.POSITION.TOP_RIGHT,
+  //     });
+  // }
 
   handleReset = () => {
     console.log('handleReset');
@@ -85,39 +88,45 @@ class Dashboard extends Component {
     let displayPosts = posts.map((value, index) => {
       // console.log(value, index);
       return(
-        <Link to={ `post/${ value.post_id }` }>
+        <Link to={ `post/${ value.post_id }` } key={ value.post_id }>
           <div key={ value.post_id }  className='dashboardPostBox'>
             <img src={ value.user_profile_pic }  alt={ value.user_username }></img>
             <p className='titleP'>Title: { value.post_title }</p>
             <p className='usernameP'>By: { value.user_username }</p>
           </div>
         </Link>
-
       )
     });
 
     return (
       <div className='dashboardbox'>
         <NavBar/>
+        <ToastContainer autoClose={ 3000 } />
           <div className='innerdashboardbox'>
             <div className='dashboard_search_box'>
               <input onChange={ (e) => this.handleInputSearchItem(e.target.value) } placeholder='Search item'></input>
               <button onClick={ () =>  this.handleGetPost() }>
-                <i class='fas fa-search'></i>
+                <i className='fas fa-search'></i>
               </button>  
               <button onClick={ () =>  this.handleReset() }>
-                <i class='fas fa-undo'></i>
+                <i className='fas fa-undo'></i>
               </button>
             </div>
-            
-          <div>
-            { displayPosts }
+            <div>
+              { displayPosts }
+            </div>
           </div>
-        </div>
-        
       </div>
     );
   }
+}
+
+//// def props type
+Dashboard.propTypes = {
+  userReducer: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    username: PropTypes.string,
+  })
 }
 
 function mapStateToProps(state) {

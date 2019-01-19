@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from '../navBar/NavBar';
 import css from './post.scss'
+
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
 class Post extends Component {
@@ -10,7 +11,6 @@ class Post extends Component {
       posts: [],
       countThumbsUp: 1,
       countThumbsDown: 2,
-
      };
   }
 
@@ -30,7 +30,7 @@ class Post extends Component {
   }
 
   handleLikeOrDislikeThumb = (number) => {
-    console.log('number', number);
+    // console.log('number', number);
     if(number === 1) {
       this.setState({ countThumbsUp: this.state.countThumbsUp + 1 })
     } else {
@@ -61,20 +61,21 @@ class Post extends Component {
             <div className='innderPostThumbBox'>
               <button onClick={ () => this.handleLikeOrDislikeThumb(1) } className='onHoverEffect'>
                 <span>Like { this.state.countThumbsUp }</span>
-                <i class="fas fa-thumbs-up"></i>
+                <i className="fas fa-thumbs-up"></i>
               </button>
               <button onClick={ () => this.handleLikeOrDislikeThumb(2) } className='onHoverEffect'>
                 <span>Dislike { this.state.countThumbsDown }</span>
-                <i class="fas fa-thumbs-down"></i>
+                <i className="fas fa-thumbs-down"></i>
               </button>
               <button onClick={ () => this.handleaddComment() } className='onHoverEffect'>
                 <span>comments</span>
-                <i class="fas fa-comments"></i>
+                <i className="fas fa-comments"></i>
               </button>
             </div>
           </div>
       )
     });
+
     return (
       <div className='postViewBox'>
         <NavBar/>

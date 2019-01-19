@@ -19,7 +19,7 @@ const userRegister = (req, res, next) => {
 
   dbInstace.register_newUser(req.body.userName, req.body.passWord, `https://robohash.org/${ req.body.userName }`)
   .then((response) => {
-    // console.log(response)
+    console.log(response)
     res.status(200).send(response)
   })
   .catch((error) => console.log(`Danger! BackEnd error ${ error }`));

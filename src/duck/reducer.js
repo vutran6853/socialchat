@@ -16,7 +16,7 @@ const initialState = {
 //// Initial Action Creator for Payload
 export function getUserInfo(user_id, user_username, user_profile_pic) {
   let content = { id: user_id, username: user_username, profile_pic: user_profile_pic }
-  console.log(content);
+  // console.log(content);
   return {
     type: GETUSERINFO,
     payload: content
@@ -24,7 +24,7 @@ export function getUserInfo(user_id, user_username, user_profile_pic) {
 }
 
 export function getUrlImage(value) {
-  console.log(value);
+  // console.log(value);
   return {
     type: GETURLIMAGE,
     payload: value
@@ -56,7 +56,6 @@ export default function userReducer(state = initialState, action) {
     }
 
     default:
-    // console.log(state)
     return state;
   }
 }

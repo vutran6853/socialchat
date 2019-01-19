@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getUserInfo } from '../../duck/reducer';
-import Axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 import css from './auth.scss';
+
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
 class Auth extends Component {
@@ -23,57 +25,102 @@ class Auth extends Component {
     this.setState({ password: value })
   }
 
-  handleLogin() {
-    let content = { userName: this.state.username, passWord: this.state.password }
+  ////  Login/fetching user profile
+  ////  check if user in database
+  handleLogin(e) {
+    e.preventDefault();
 
-    fetch(`${ SERVER_URL_ENDPOINT }/api/auth/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(content)
-    })
-    .then((response) => response.json())
-    .then((response) => {
-      // if(response[0] !== undefined) {
-        // console.log('response[0]', response);
-        // console.log(this.props);
-        this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
-        this.props.history.push('/dashboard')
-        
-      // } else {
-        // console.log('undefined', undefined);
-      // }
-    })
-    .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
+    if(this.state.username !== '' && this.state.password !== '') {
+      let content = { userName: this.state.username, passWord: this.state.password }
+
+      fetch(`${ SERVER_URL_ENDPOINT }/api/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(content)
+      })
+      .then((response) => response.json())
+      .then((response) => {
+        if(!response[0]) {
+          this.notify(1.5)
+        } else {
+          this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
+          this.props.history.push('/dashboard')
+          this.notify(3, response[0].user_username)
+        }
+      })
+      .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
+    } else {
+      this.notify(1)
+    }
   }
 
-  handleRegister = () => {
-    let content = { userName: this.state.username, passWord: this.state.password }
+  ////  notify message 
+  notify = (number, username) => {
+    switch(number) {
+      case 1:
+      return toast.error('Incorrect usename or password', {
+             position: toast.POSITION.TOP_RIGHT,
+      });
+      case 1.5:
+      return toast.warn('No user can be found. Try again', {
+             position: toast.POSITION.TOP_RIGHT,
+      });
+      case 2: 
+      return toast.error('Please enter username and password', {
+             position: toast.POSITION.TOP_RIGHT,
+      });
+      case 3:
+      return toast.success(`Welcome back ${ username }`, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      case 4:
+      return toast.success(`Welcome ${ username }`, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+  }
 
-    fetch(`${ SERVER_URL_ENDPOINT }/api/auth/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(content)
-    })
-    .then((response) => response.json())
-    .then(this.props.history.push('/dashboard'))
-    .catch((error) => console.log(`Danger! FrontEnd error ${ error }`))
+  //// Register user profile
+  handleRegister = (e) => {
+    e.preventDefault();
+
+    if(this.state.username !== '' && this.state.password !== '') {
+     let content = { userName: this.state.username, passWord: this.state.password }
+
+      fetch(`${ SERVER_URL_ENDPOINT }/api/auth/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(content)
+      })
+      .then((response) => response.json())
+      .then((response) => {
+        this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
+        this.props.history.push('/dashboard')
+        this.notify(4, response[0].user_username)
+      })
+      .catch((error) => console.log(`Danger! FrontEnd error ${ error }`))
+    } else {
+      this.notify(2)
+    }
   }
 
   render() {
-    // console.log(this.props);
     return (
       <div className='authMainBox'>
-        <div className='formBox'>
-          <h3>UserName</h3>
-          <input onChange={ (e) => this.handleInputUserName(e.target.value, 'username') } placeholder='Enter your username'></input>
-          
-          <h3>Password</h3>
-          <input onChange={ (e) => this.handleInputUserPassword(e.target.value, 'passwordname') } type='password' placeholder='Enter your password'></input>
-          
-          <br/>
-          <button onClick={ () =>  this.handleLogin() }>login</button>
-          <button onClick={ () => this.handleRegister() }>Register</button>
-        </div>
+        <ToastContainer autoClose={ 3000 } />
+        <form>
+          <div className='formBox'>
+            <h3>UserName</h3>
+            <input onChange={ (e) => this.handleInputUserName(e.target.value, 'username') } placeholder='Enter your username'></input>
+            
+            <h3>Password</h3>
+            <input onChange={ (e) => this.handleInputUserPassword(e.target.value, 'passwordname') } type='password' placeholder='Enter your password'></input>
+            
+            <br/>
+            <button onClick={ (e) =>  this.handleLogin(e) }>login</button>
+            <button onClick={ (e) => this.handleRegister(e) }>Register</button>
+          </div>
+        </form>
       </div>
     );
   }
