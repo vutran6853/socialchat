@@ -41,7 +41,7 @@ class Dashboard extends Component {
       })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         this.setState({ posts: response })
         // this.props.history.push('/dashboard')
       })
@@ -90,8 +90,9 @@ class Dashboard extends Component {
       return(
         <Link to={ `post/${ value.post_id }` } key={ value.post_id }>
           <div key={ value.post_id }  className='dashboardPostBox'>
-            <img src={ value.user_profile_pic }  alt={ value.user_username }></img>
+            <img src={ value.user_profile_pic } className='UserProfilePic'  alt={ value.user_username }></img>
             <p className='titleP'>Title: { value.post_title }</p>
+            <img src={ value.post_img } className='previewPostImage'></img>
             <p className='usernameP'>By: { value.user_username }</p>
           </div>
         </Link>
@@ -104,7 +105,7 @@ class Dashboard extends Component {
         <ToastContainer autoClose={ 3000 } />
           <div className='innerdashboardbox'>
             <div className='dashboard_search_box'>
-              <input onChange={ (e) => this.handleInputSearchItem(e.target.value) } placeholder='Search item'></input>
+              <input onChange={ (e) => this.handleInputSearchItem(e.target.value) } placeholder='Search By Title'></input>
               <button onClick={ () =>  this.handleGetPost() }>
                 <i className='fas fa-search'></i>
               </button>  

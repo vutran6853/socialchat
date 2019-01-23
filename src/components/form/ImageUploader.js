@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
-import fbConfig  from '../firebase';
-import noIMage from '../image/No_Image_Available.jpg';
+import fbConfig  from '../../firebase';
+import noIMage from '../../image/No_Image_Available.jpg';
 import { connect } from 'react-redux';
-import { getUrlImage } from '../duck/reducer';
+import { getUrlImage } from '../../duck/reducer';
 
 class ProfilePage extends Component {
   state = {

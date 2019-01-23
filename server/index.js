@@ -8,7 +8,8 @@ const massive = require('massive');
 const session = require('express-session');
 
 const { userLogin, userRegister, userByIDPost, userLogout,
-        getAllPostBySearch, getAllPostByNoSeach, getSinglePostById } = require('./controllers/socialchatControllers');
+        getAllPostBySearch, getAllPostByNoSeach, getSinglePostById,
+        getComments, postUserComment } = require('./controllers/socialchatControllers');
 
 // const checkForSession = require('./controllers/checkForSession');
 
@@ -46,6 +47,8 @@ app.post('/api/post/:id', userByIDPost)
 app.get('/api/getAllPostBySearch/:id', getAllPostBySearch)
 app.get('/api/getAllPostByNoSeach/:id', getAllPostByNoSeach)
 app.get('/api/getSinglePostById/:id', getSinglePostById)
+app.post('/api/getComments', getComments)
+app.post('/api/postUserComment', postUserComment)
 
 app.listen(port, () => {
   console.log(`Server is UP and listen to port ${ port }`);

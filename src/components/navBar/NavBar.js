@@ -8,7 +8,7 @@ import css from './navbar.scss'
 class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {  };
+
   }
 
   render() {
@@ -16,7 +16,7 @@ class NavBar extends Component {
       <div className='navbarBox'>
         <div className='profileBox'>
           <img src={ this.props.userReducer.profile_picture }></img>
-          <p>Name: { this.props.userReducer.username }</p>
+          <p>{ this.props.userReducer.username }</p>
         </div>
         <Link to='/dashboard'>
           <button className='button1'>
@@ -26,6 +26,11 @@ class NavBar extends Component {
         <Link to='/new'>
           <button className='button1'>
             <i className='fa fa-plus-circle'></i>
+          </button>
+        </Link>
+        <Link to='/account'>
+          <button className='button1'>
+            <i className="fas fa-cogs"></i>
           </button>
         </Link>
         <Link to='/'>

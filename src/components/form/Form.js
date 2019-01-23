@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import css from './form.scss';
 import NavBar from '../navBar/NavBar';
 import noIMage from '../../image/No_Image_Available.jpg';
-import ProfilePage from '../ProfilePage';
+import ImageUploader from './ImageUploader';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
@@ -62,7 +62,7 @@ class Form extends Component {
               <p>Title:</p>
               <input name='title' onChange={ this.handleInputForm } placeholder='title'></input>
               <br/>
-              <ProfilePage data={ this.handleGetUrlFromImage }/>
+              <ImageUploader data={ this.handleGetUrlFromImage }/>
               <br/>
               <p>Content:</p>
               <textarea name='content' onChange={ this.handleInputForm } placeholder='content'></textarea>

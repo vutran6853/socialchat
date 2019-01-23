@@ -4,11 +4,10 @@ import { getUserInfo } from '../../duck/reducer';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import css from './auth.scss';
-import logo from '../../image/mstile-150x150.png';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
-class Auth extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -26,48 +25,20 @@ class Auth extends Component {
     this.setState({ password: value })
   }
 
-  ////  Login/fetching user profile
-  ////  check if user in database
   handleLogin(e) {
     e.preventDefault();
-
-    if(this.state.username !== '' && this.state.password !== '') {
-      let content = { userName: this.state.username, passWord: this.state.password }
-
-      fetch(`${ SERVER_URL_ENDPOINT }/api/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(content)
-      })
-      .then((response) => response.json())
-      .then((response) => {
-        if(!response[0]) {
-          this.notify(1.5)
-        } else {
-          this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
-          this.props.history.push('/dashboard')
-          this.notify(3, response[0].user_username)
-        }
-      })
-      .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
-    } else {
-      this.notify(1)
-    }
+    this.props.history.push('/')
   }
 
   ////  notify message 
   notify = (number, username) => {
     switch(number) {
-      case 1:
-      return toast.error('Incorrect usename or password', {
+      case 3: 
+      return toast.error('Please enter username and password', {
              position: toast.POSITION.TOP_RIGHT,
       });
-      case 1.5:
-      return toast.warn('No user can be found. Try again', {
-             position: toast.POSITION.TOP_RIGHT,
-      });
-      case 2:
-      return toast.success(`Welcome back ${ username }`, {
+      case 4:
+      return toast.success(`Welcome ${ username }`, {
         position: toast.POSITION.TOP_RIGHT,
       });
     }
@@ -76,7 +47,25 @@ class Auth extends Component {
   //// Register user profile
   handleRegister = (e) => {
     e.preventDefault();
-    this.props.history.push('/signUp')
+
+    if(this.state.username !== '' && this.state.password !== '') {
+     let content = { userName: this.state.username, passWord: this.state.password }
+
+      fetch(`${ SERVER_URL_ENDPOINT }/api/auth/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(content)
+      })
+      .then((response) => response.json())
+      .then((response) => {
+        this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
+        this.props.history.push('/dashboard')
+        this.notify(4, response[0].user_username)
+      })
+      .catch((error) => console.log(`Danger! FrontEnd error ${ error }`))
+    } else {
+      this.notify(3)
+    }
   }
 
   render() {
@@ -85,7 +74,7 @@ class Auth extends Component {
         <ToastContainer autoClose={ 3000 } />
         <form>
           <div className='formBox'>
-            <h3>Login</h3>
+            <h3>Create a New Account</h3>
             <br/>
             <h3>UserName</h3>
             <input onChange={ (e) => this.handleInputUserName(e.target.value, 'username') } placeholder='Enter your username'></input>
@@ -94,8 +83,8 @@ class Auth extends Component {
             <input onChange={ (e) => this.handleInputUserPassword(e.target.value, 'passwordname') } type='password' placeholder='Enter your password'></input>
             
             <br/>
-            <button onClick={ (e) =>  this.handleLogin(e) }>login</button>
             <button onClick={ (e) => this.handleRegister(e) }>Register</button>
+            <button onClick={ (e) =>  this.handleLogin(e) }>Have an account?</button>
           </div>
         </form>
       </div>
@@ -103,4 +92,4 @@ class Auth extends Component {
   }
 }
 
-export default connect(null, { getUserInfo })(Auth);
+export default connect(null, { getUserInfo })(SignUp);

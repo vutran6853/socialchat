@@ -97,6 +97,34 @@ const getSinglePostById = (req, res, next) => {
 
 }
 
+const getComments = (req, res, next) => {
+
+  const dbInstace = req.app.get('db');
+
+  dbInstace.getCommentsByID(req.body.post_id)
+  .then((response) => {
+    // console.log(response)
+    res.status(200).send(response)
+  })
+  .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
+
+}
+
+const postUserComment = (req, res, next) => {
+  console.log(req.body);
+
+  const dbInstace = req.app.get('db');
+
+  dbInstace.postUserComment(req.body.userInput, req.body.userId, req.body.post_id)
+  .then((response) => {
+    console.log(response)
+    // res.status(200).send(response)
+  })
+  .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
+
+
+}
+
 module.exports = {
   userLogin,
   userRegister,
@@ -105,4 +133,6 @@ module.exports = {
   getAllPostBySearch,
   getAllPostByNoSeach,
   getSinglePostById,
+  getComments,
+  postUserComment,
 }
