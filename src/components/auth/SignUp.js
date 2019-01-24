@@ -81,7 +81,7 @@ class SignUp extends Component {
       <div className='authMainBox'>
         <ToastContainer autoClose={ 3000 } />
         <form>
-          <div className='formBox'>
+          <div className='formBox signUpForm'>
             <h3>Create a New Account</h3>
             <br/>
             <h3>UserName</h3>

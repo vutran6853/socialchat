@@ -4,6 +4,7 @@ import FileUploader from "react-firebase-file-uploader";
 import fbConfig  from '../../firebase';
 import noIMage from '../../image/No_Image_Available.jpg';
 import { connect } from 'react-redux';
+import css from './account.scss'
 import { getUrlImage, postUserProfileUrlImage, getUserInfo } from '../../duck/reducer';
 
 class ImageAccountUploader extends Component {
@@ -49,7 +50,7 @@ class ImageAccountUploader extends Component {
   render() {
     let imgSrc = this.state.avatarURL ? this.state.avatarURL : noIMage;
     return (
-      <div>
+      <div className='imageAccountUploaderBox'>
         { this.state.isUploading && <p>Progress: { this.state.progress }</p>}
 
         <FileUploader accept="userProfilePirture/*"

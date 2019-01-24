@@ -1,5 +1,5 @@
 const editUserAccount = (req, res, next) => {
-  console.log('2', req.body);
+  // console.log('2', req.body)
 
   const dbInstace = req.app.get('db');
 
@@ -12,12 +12,40 @@ const editUserAccount = (req, res, next) => {
 }
 
 const postNewprofilePic = (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body)
   const dbInstace = req.app.get('db');
 
   dbInstace.updateUserPhoto(req.body.userID, req.body.photo)
   .then((response) => {
-    console.log(response)
+    // console.log(response)
+    res.status(200).send(response)
+  })
+  .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
+
+}
+
+const postUserEmail = (req, res, next) => {
+  console.log(req.body)
+
+  const dbInstace = req.app.get('db');
+
+  dbInstace.updateUserEmail(req.body.id, req.body.email)
+  .then((response) => {
+    // console.log(response)
+    res.status(200).send(response)
+  })
+  .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
+
+}
+
+const postUserPassword = (req, res, next) => {
+  // console.log(req.body)
+
+  const dbInstace = req.app.get('db');
+
+  dbInstace.updateUserPassword(req.body.id, req.body.password)
+  .then((response) => {
+    // console.log(response)
     res.status(200).send(response)
   })
   .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
@@ -26,5 +54,7 @@ const postNewprofilePic = (req, res, next) => {
 
 module.exports = {
   editUserAccount,
-  postNewprofilePic
+  postNewprofilePic,
+  postUserEmail,
+  postUserPassword
 }

@@ -1,0 +1,66 @@
+@import '../../global.scss';
+
+
+.accountBox {
+  border: 1px solid white;
+  // margin-left: 10px;
+  // height: 100px;
+
+  h3 {
+    border: 1px solid black;
+    margin-left: 25rem;
+    margin-top: 10rem;
+    width: 90rem;
+    box-shadow: 5px 5px #888888;
+    // padding-left: 40rem;
+    text-align: center;
+  }
+
+  .accountFormBox {
+    border: 5px solid red;
+    margin-left: 25rem;
+    margin-top: 5rem;
+    height: 50rem;
+    width: 90rem;
+    box-shadow: 5px 5px #888888;
+    padding-left: 25rem;
+    padding-top: 10rem;
+    p {
+      border: 1px solid black;
+      // margin-top: 2px;
+
+
+      width: 200px;
+      float: left;
+      box-shadow: 5px 5px #888888;
+    }
+
+    img {
+      border: 2px solid yellowgreen;
+      margin-left: 10px;
+      // float: left;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .emailInput {
+      border: 2px solid yellowgreen;
+      // float: left;
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    .passwordInput {
+      border: 2px solid lightcoral;
+      // float: left;
+      margin-left: 10px;
+    }
+    
+    .imageAccountUploaderBox {
+      border: 2px solid yellowgreen;
+      float: right;
+      margin-right: 200px;
+      
+    }
+  }
+}

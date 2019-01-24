@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getUserInfo } from '../../duck/reducer';
+import { getUpdateUserInfo } from '../../duck/reducer';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import css from './auth.scss';
@@ -44,7 +44,9 @@ class Auth extends Component {
         if(!response[0]) {
           this.notify(1.5)
         } else {
-          this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
+          this.props.getUpdateUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic, response[0].user_email)
+          // this.props.getUpdateUserInfo(response.data[0].user_id, response.data[0].user_username, response.data[0].user_profile_pic, response.data[0].user_email )
+
           this.props.history.push('/dashboard')
           this.notify(3, response[0].user_username)
         }
@@ -103,4 +105,4 @@ class Auth extends Component {
   }
 }
 
-export default connect(null, { getUserInfo })(Auth);
+export default connect(null, { getUpdateUserInfo })(Auth);

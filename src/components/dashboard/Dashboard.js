@@ -67,13 +67,6 @@ class Dashboard extends Component {
 
   }
 
-  ////  notify message 
-  // notify = () => {
-  //   toast.success(`Welcome back ${ this.props.userReducer.username }`, {
-  //             position: toast.POSITION.TOP_RIGHT,
-  //     });
-  // }
-
   handleReset = () => {
     console.log('handleReset');
   }
@@ -91,8 +84,8 @@ class Dashboard extends Component {
         <Link to={ `post/${ value.post_id }` } key={ value.post_id }>
           <div key={ value.post_id }  className='dashboardPostBox'>
             <img src={ value.user_profile_pic } className='UserProfilePic'  alt={ value.user_username }></img>
-            <p className='titleP'>Title: { value.post_title }</p>
             <img src={ value.post_img } className='previewPostImage'></img>
+            <p className='titleP'>Title: { value.post_title }</p>
             <p className='usernameP'>By: { value.user_username }</p>
           </div>
         </Link>

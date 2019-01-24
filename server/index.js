@@ -11,7 +11,7 @@ const { userLogin, userRegister, userByIDPost, userLogout,
         getAllPostBySearch, getAllPostByNoSeach, getSinglePostById,
         getComments, postUserComment } = require('./controllers/socialchatControllers');
 
-const { editUserAccount, postNewprofilePic } = require('./controllers/account');
+const { editUserAccount, postNewprofilePic, postUserEmail, postUserPassword } = require('./controllers/account');
 
 // const checkForSession = require('./controllers/checkForSession');
 
@@ -57,6 +57,9 @@ app.post('/api/postUserComment', postUserComment)
 /// Account Endpoint
 app.put('/api/editUserAccount', editUserAccount)
 app.put('/api/postNewprofilePic', postNewprofilePic)
+app.put('/api/postUserEmail', postUserEmail)
+app.put('/api/postUserPassword', postUserPassword)
+
 
 /// Server 
 app.listen(port, () => {

@@ -4,6 +4,7 @@ const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
 ////  Initial value
 const GETUSERINFO = 'GETUSERINFO'
+const UPDATEUSERINFO = 'UPDATEUSERINFO'
 const GETURLIMAGE = 'GETURLIMAGE'
 const EDITUSERNAME = 'EDITUSERNAME'
 const POSTPROFILEPIRCTURE = 'POSTPROFILEPIRCTURE'
@@ -13,6 +14,7 @@ const initialState = {
   id: 0,
   username: '',
   profile_picture: '',
+  userEmail: '',
   addUserIDErrorMsg: '',
   urlImage: '',
   error: [],
@@ -33,6 +35,15 @@ export function getUrlImage(value) {
   return {
     type: GETURLIMAGE,
     payload: value
+  }
+}
+
+export function getUpdateUserInfo(user_id, user_username, user_profile_pic, user_email) {
+  let content = { id: user_id, username: user_username, profile_pic: user_profile_pic, userEmail: user_email }
+  // console.log(content);
+  return {
+    type: UPDATEUSERINFO,
+    payload: content
   }
 }
 
@@ -60,6 +71,14 @@ export default function userReducer(state = initialState, action) {
         id: action.payload.id,
         username: action.payload.username,
         profile_picture: action.payload.profile_pic
+    }
+    case UPDATEUSERINFO:
+    return {
+      ...state,
+      id: action.payload.id,
+      username: action.payload.username,
+      profile_picture: action.payload.profile_pic,
+      userEmail: action.payload.userEmail
     }
     case GETUSERINFO:
     console.log(`${ GETUSERINFO }_REJECTED`);

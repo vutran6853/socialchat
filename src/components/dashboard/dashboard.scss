@@ -47,7 +47,7 @@
     height: 150px;
     width: 150px;
     // float: left;
-    // margin-left: 40px;
+    margin-left: 5rem;
   }
 
   .titleP {
@@ -86,7 +86,7 @@
       input {
         // border: 1px solid black;
         // display: inline-block;
-        width: 50vw;
+        width: 3vw;
       }
     }
   }
@@ -102,37 +102,27 @@
       border-radius: 50%;
       height: 70px;
       width: 70px;
-      float: right;
+      // float: right;
+      // margin: 0px !important;
+      // margin-right: 100px;
+      // padding: 0px !important;
     }
   
     .previewPostImage {
       border: 1px solid black;
       box-shadow: 5px 5px #888888;
-  
-      // border-radius: 50%;
-      height: 150px;
-      width: 150px;
-      // float: left;
-      // margin-left: 15rem;
+      margin-left: 0px;
+      margin-top: 0px;
     }
   
     .titleP {
-      border: 2px solid black;
-      // display: grid;
-      // grid-area: auto;
-      // grid-auto-flow: column;
-      // flex-basis: 10px;
-      // float: left;
-
-      // margin-top: 10px;
-      // margin-left: 10rem;
-      // margin: 0px !important;
-      // height: 10rem;
-      // width: 10rem;
+      // border: 2px solid black;
+      // margin: 0px;
+      width: 15vw;
     }
-  
+
     // .usernameP {
-    //   float: right;
+    //   border: 2px solid black;
     // }
   }
 }
@@ -166,33 +156,39 @@
   }
   
   .dashboardPostBox {
-    // border: 2px solid black;
-    margin: 10px;
+    border: 1px solid black;
+    // margin: 20px !important; 
     box-shadow: 5px 5px #888888;
     height: 150px;
     width: 30rem;
   
-    img {
-      border: 2px solid blue;
+    .UserProfilePic {
+      border: 1px solid blue;
       border-radius: 50%;
       height: 70px;
       width: 70px;
-      // float: right !important;
+      // float: right;
+      // margin: 0px !important;
+      // margin-right: 100px;
+      // padding: 0px !important;
+    }
+  
+    .previewPostImage {
+      border: 1px solid black;
+      box-shadow: 5px 5px #888888;
+      margin-left: 0px;
+      margin-top: 0px;
     }
   
     .titleP {
       // border: 2px solid black;
-      display: inline-flex;
-      // margin-top: 10px;
-      // margin-left: 10px;
-  
-      height: 10vh;
-      width: 20vw;
+      // margin: 0px;
+      width: 15vw;
     }
-  
-    .usernameP {
-      float: right;
-    }
+
+    // .usernameP {
+    //   border: 2px solid black;
+    // }
   }
 }
 
@@ -219,101 +215,113 @@
       input {
         // border: 1px solid black;
         // display: inline-block;
-        width: 33vw;
+        width: 50vw;
       }
     }
   }
   
   .dashboardPostBox {
-    // border: 2px solid black;
-    margin: 10px;
+    border: 1px solid black;
+    // margin: 20px !important; 
     box-shadow: 5px 5px #888888;
     height: 150px;
     width: 30rem;
   
-    img {
-      border: 2px solid blue;
+    .UserProfilePic {
+      border: 1px solid blue;
       border-radius: 50%;
       height: 70px;
       width: 70px;
-    // float: right !important;
+      // float: right;
+      // margin: 0px !important;
+      // margin-right: 100px;
+      // padding: 0px !important;
+    }
+  
+    .previewPostImage {
+      border: 1px solid black;
+      box-shadow: 5px 5px #888888;
+      margin-left: 0px;
+      margin-top: 0px;
     }
   
     .titleP {
       // border: 2px solid black;
-      display: inline-flex;
-      // margin-top: 10px;
-      // margin-left: 10px;
-  
-      height: 10vh;
-      width: 27vw;
+      // margin: 0px;
+      width: 20vw;
     }
-  
-    .usernameP {
-      float: right;
-    }
+
+    // .usernameP {
+    //   border: 2px solid black;
+    // }
   }
 }
 
 //// Galaxy Portrait
 @media(max-width: $Moblie360MaxWidth) and (max-height: $Moblie640MaxHeight) {
-  .dashboardbox {
+   .dashboardbox {
     // border: 2px solid blue;
       // float: right;
   
     .innerdashboardbox {
       // border: 2px solid blue;
-      margin-left: 12vh  !important;
+      margin-left: 15vh;
       margin-right: 40vh;
     }
-
+  
     .dashboard_search_box {
       // border: 5px solid black;
       margin-top: 1vw;
       margin-left: 1vw;
-      width: 15rem;
+      width: 30rem;
       padding: 1vw;
       box-shadow: 5px 5px #888888;
   
       input {
         // border: 1px solid black;
         // display: inline-block;
-        width: 45vw  !important;
+        width: 33vw;
       }
     }
   }
-
+  
   .dashboardPostBox {
-    // border: 2px solid black;
-    margin: 10px;
+    border: 1px solid black;
+    // margin: 20px !important; 
     box-shadow: 5px 5px #888888;
     height: 150px;
-    width: 15rem;
+    width: 30rem;
   
-    img {
+    .UserProfilePic {
       border: 1px solid blue;
       border-radius: 50%;
       height: 40px;
       width: 40px;
-    // float: right !important;
+      // float: left;
+      // margin: 0px !important;
+      // margin-right: 100px;
+      // padding: 0px !important;
     }
+  
+    .previewPostImage {
+      border: 1px solid black;
+      box-shadow: 5px 5px #888888;
+      // margin-left: 0px;
+      // margin-top: 0px;
+      border-radius: 0%;
+      height: 22vh;
+      width: 22vw;
+      float: left;
 
+    }
+  
     .titleP {
-      // border: 2px solid black;
-      // display: inline-flex;
-      font-size: 10px;
-      // margin-top: 10px;
-      // margin-left: 10px;
-  
-      height: 10vh;
-      width: 21vw  !important;
+      width: 10vw !important;
     }
-  
-    .usernameP {
-      // float: right;
-      font-size: 10px;
 
-    }
+    // .usernameP {
+    //   border: 2px solid black;
+    // }
   }
 }
 
@@ -346,35 +354,43 @@
   }
 
   .dashboardPostBox {
-    // border: 2px solid black;
-    margin: 10px;
+    border: 1px solid black;
+    // margin: 20px !important; 
     box-shadow: 5px 5px #888888;
     height: 150px;
     width: 15rem;
-    font-size: 12px;
+    font-size: 11px;
 
-    img {
+    .UserProfilePic {
       border: 1px solid blue;
       border-radius: 50%;
       height: 40px;
       width: 40px;
-    // float: right !important;
-    }
-
-    .titleP {
-      // border: 2px solid black;
-      display: inline-flex;
-      // margin-top: 10px;
-      // margin-left: 10px;
-      font-size: 12px;
-
-      height: 10vh;
-      width: 10vw;
+      // float: left;
+      // margin: 0px !important;
+      // margin-right: 100px;
+      // padding: 0px !important;
     }
   
-    .usernameP {
-      float: right;
+    .previewPostImage {
+      border: 1px solid black;
+      box-shadow: 5px 5px #888888;
+      // margin-left: 0px;
+      // margin-top: 0px;
+      border-radius: 0%;
+      height: 17vh;
+      width: 17vw;
+      float: left;
     }
+  
+    .titleP {
+      width: 10vw !important;
+      // font-size: 10px;
+    }
+
+    // .usernameP {
+    //   border: 2px solid black;
+    // }
   }
 }
 
@@ -408,33 +424,43 @@
   }
 
   .dashboardPostBox {
-    // border: 2px solid black;
-    margin: 10px;
+    border: 1px solid black;
+    // margin: 20px !important; 
     box-shadow: 5px 5px #888888;
     height: 150px;
     width: 15rem;
-  
-    img {
+    font-size: 11px;
+
+    .UserProfilePic {
       border: 1px solid blue;
       border-radius: 50%;
       height: 40px;
       width: 40px;
-    // float: right !important;
+      // float: left;
+      // margin: 0px !important;
+      // margin-right: 100px;
+      // padding: 0px !important;
+    }
+  
+    .previewPostImage {
+      border: 1px solid black;
+      box-shadow: 5px 5px #888888;
+      // margin-left: 0px;
+      // margin-top: 0px;
+      border-radius: 0%;
+      height: 19vh;
+      width: 19vw;
+      float: left;
+    }
+  
+    .titleP {
+      width: 10vw !important;
+      // font-size: 10px;
     }
 
-    .titleP {
-      // border: 2px solid black;
-      // display: inline-flex;
-      // margin-top: 10px;
-      // margin-left: 10px;
-  
-      height: 10vh;
-      width: 10vw;
-    }
-  
-    .usernameP {
-      float: right;
-    }
+    // .usernameP {
+    //   border: 2px solid black;
+    // }
   }
 }
 
@@ -467,33 +493,43 @@
   }
 
   .dashboardPostBox {
-    // border: 2px solid black;
-    margin: 10px;
+    border: 1px solid black;
+    // margin: 20px !important; 
     box-shadow: 5px 5px #888888;
     height: 150px;
     width: 30rem;
-  
-    img {
+    font-size: 11px;
+
+    .UserProfilePic {
       border: 1px solid blue;
       border-radius: 50%;
       height: 40px;
       width: 40px;
-    // float: right !important;
+      // float: left;
+      // margin: 0px !important;
+      // margin-right: 100px;
+      // padding: 0px !important;
+    }
+  
+    .previewPostImage {
+      border: 1px solid black;
+      box-shadow: 5px 5px #888888;
+      // margin-left: 0px;
+      // margin-top: 0px;
+      border-radius: 0%;
+      height: 34vh;
+      width: 25vw;
+      float: left;
+    }
+  
+    .titleP {
+      width: 10vw !important;
+      // font-size: 10px;
     }
 
-    .titleP {
-      // border: 2px solid black;
-      display: inline-flex;
-      // margin-top: 10px;
-      // margin-left: 10px;
-  
-      height: 10vh;
-      width: 27vw;
-    }
-  
-    .usernameP {
-      float: right;
-    }
+    // .usernameP {
+    //   border: 2px solid black;
+    // }
   }
 }
 
@@ -526,33 +562,43 @@
   }
 
   .dashboardPostBox {
-    border: 2px solid black;
-    margin: 10px;
+    border: 1px solid black;
+    // margin: 20px !important; 
     box-shadow: 5px 5px #888888;
-    height: 130px;
+    height: 150px;
     width: 15rem;
-  
-    img {
+    font-size: 11px;
+
+    .UserProfilePic {
       border: 1px solid blue;
       border-radius: 50%;
       height: 40px;
       width: 40px;
-    // float: right !important;
+      // float: left;
+      // margin: 0px !important;
+      // margin-right: 100px;
+      // padding: 0px !important;
+    }
+  
+    .previewPostImage {
+      border: 1px solid black;
+      box-shadow: 5px 5px #888888;
+      // margin-left: 0px;
+      // margin-top: 0px;
+      border-radius: 0%;
+      height: 20vh;
+      width: 19vw;
+      float: left;
+    }
+  
+    .titleP {
+      width: 10vw !important;
+      // font-size: 10px;
     }
 
-    .titleP {
-      // border: 2px solid black;
-      display: inline-flex;
-      // margin-top: 10px;
-      // margin-left: 10px;
-  
-      height: 10vh;
-      width: 27vw;
-    }
-  
-    .usernameP {
-      float: right;
-    }
+    // .usernameP {
+    //   border: 2px solid black;
+    // }
   }
 }
 
@@ -585,33 +631,43 @@
   }
 
   .dashboardPostBox {
-    // border: 2px solid black;
-    margin: 10px;
+    border: 1px solid black;
+    // margin: 20px !important; 
     box-shadow: 5px 5px #888888;
     height: 150px;
     width: 30rem;
-  
-    img {
+    font-size: 11px;
+
+    .UserProfilePic {
       border: 1px solid blue;
       border-radius: 50%;
       height: 40px;
       width: 40px;
-    // float: right !important;
+      // float: left;
+      // margin: 0px !important;
+      // margin-right: 100px;
+      // padding: 0px !important;
+    }
+  
+    .previewPostImage {
+      border: 1px solid black;
+      box-shadow: 5px 5px #888888;
+      // margin-left: 0px;
+      // margin-top: 0px;
+      border-radius: 0%;
+      height: 34vh;
+      width: 25vw;
+      float: left;
+    }
+  
+    .titleP {
+      width: 10vw !important;
+      // font-size: 10px;
     }
 
-    .titleP {
-      // border: 2px solid black;
-      display: inline-flex;
-      // margin-top: 10px;
-      // margin-left: 10px;
-  
-      height: 10vh;
-      width: 27vw;
-    }
-  
-    .usernameP {
-      float: right;
-    }
+    // .usernameP {
+    //   border: 2px solid black;
+    // }
   }
 }
 
