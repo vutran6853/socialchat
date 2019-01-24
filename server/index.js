@@ -11,6 +11,8 @@ const { userLogin, userRegister, userByIDPost, userLogout,
         getAllPostBySearch, getAllPostByNoSeach, getSinglePostById,
         getComments, postUserComment } = require('./controllers/socialchatControllers');
 
+const { editUserAccount, postNewprofilePic } = require('./controllers/account');
+
 // const checkForSession = require('./controllers/checkForSession');
 
 app.use(cors());
@@ -43,6 +45,7 @@ app.post('/api/auth/register', userRegister)
 // app.post('/api/auth/userId', userId)
 app.post('/api/auth/logout', userLogout)
 
+////  Post Endpoint
 app.post('/api/post/:id', userByIDPost)
 app.get('/api/getAllPostBySearch/:id', getAllPostBySearch)
 app.get('/api/getAllPostByNoSeach/:id', getAllPostByNoSeach)
@@ -50,6 +53,12 @@ app.get('/api/getSinglePostById/:id', getSinglePostById)
 app.post('/api/getComments', getComments)
 app.post('/api/postUserComment', postUserComment)
 
+
+/// Account Endpoint
+app.put('/api/editUserAccount', editUserAccount)
+app.put('/api/postNewprofilePic', postNewprofilePic)
+
+/// Server 
 app.listen(port, () => {
   console.log(`Server is UP and listen to port ${ port }`);
 });

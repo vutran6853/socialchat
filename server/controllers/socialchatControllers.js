@@ -22,7 +22,7 @@ const userRegister = (req, res, next) => {
     console.log(response)
     res.status(200).send(response)
   })
-  .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
+  .catch((error) => res.status(400).send(error));
 }
 
 const userLogout = (req, res, next) => {

@@ -68,7 +68,7 @@
 /// 2k screen
 @media(max-width: $destop1440MinWidth) {
   .dashboardbox {
-    // border: 2px solid blue;
+    border: 1px solid white;
       // float: right;
   
     .innerdashboardbox {
@@ -78,46 +78,62 @@
     }
   
     .dashboard_search_box {
-      // border: 5px solid black;
+      border: 1px solid black;
       margin-top: 1vw;
       padding: 1vw;
       box-shadow: 5px 5px #888888;
   
       input {
-        border: 1px solid black;
+        // border: 1px solid black;
         // display: inline-block;
-        width: 33vw;
+        width: 50vw;
       }
     }
   }
   
   .dashboardPostBox {
-    // border: 2px solid black;
-    margin: 10px;
+    border: 1px solid black;
+    // margin: 20px !important; 
     box-shadow: 5px 5px #888888;
     height: 150px;
   
-    img {
-      // border: 2px solid blue;
+    .UserProfilePic {
+      border: 1px solid blue;
       border-radius: 50%;
       height: 70px;
       width: 70px;
-    // float: right !important;
+      float: right;
+    }
+  
+    .previewPostImage {
+      border: 1px solid black;
+      box-shadow: 5px 5px #888888;
+  
+      // border-radius: 50%;
+      height: 150px;
+      width: 150px;
+      // float: left;
+      // margin-left: 15rem;
     }
   
     .titleP {
-      // border: 2px solid black;
-      // display: inline-flex;
-      // margin-top: 10px;
-      // margin-left: 10px;
+      border: 2px solid black;
+      // display: grid;
+      // grid-area: auto;
+      // grid-auto-flow: column;
+      // flex-basis: 10px;
+      // float: left;
 
-      height: 10vh;
-      width: 20vw;
+      // margin-top: 10px;
+      // margin-left: 10rem;
+      // margin: 0px !important;
+      // height: 10rem;
+      // width: 10rem;
     }
   
-    .usernameP {
-      float: right;
-    }
+    // .usernameP {
+    //   float: right;
+    // }
   }
 }
 

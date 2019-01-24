@@ -37,6 +37,10 @@ class SignUp extends Component {
       return toast.error('Please enter username and password', {
              position: toast.POSITION.TOP_RIGHT,
       });
+      case 3.5: 
+      return toast.error('Username is already taken. Try again', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       case 4:
       return toast.success(`Welcome ${ username }`, {
         position: toast.POSITION.TOP_RIGHT,
@@ -58,9 +62,13 @@ class SignUp extends Component {
       })
       .then((response) => response.json())
       .then((response) => {
-        this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
-        this.props.history.push('/dashboard')
-        this.notify(4, response[0].user_username)
+        if(response.name === 'error') {
+          this.notify(3.5)
+        } else {
+          this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
+          this.props.history.push('/dashboard')
+          this.notify(4, response[0].user_username)
+        }
       })
       .catch((error) => console.log(`Danger! FrontEnd error ${ error }`))
     } else {

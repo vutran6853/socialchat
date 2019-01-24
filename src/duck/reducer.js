@@ -1,8 +1,12 @@
+import axios from "axios";
+
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
 ////  Initial value
 const GETUSERINFO = 'GETUSERINFO'
 const GETURLIMAGE = 'GETURLIMAGE'
+const EDITUSERNAME = 'EDITUSERNAME'
+const POSTPROFILEPIRCTURE = 'POSTPROFILEPIRCTURE'
 
 ////  Initial state
 const initialState = {
@@ -11,6 +15,7 @@ const initialState = {
   profile_picture: '',
   addUserIDErrorMsg: '',
   urlImage: '',
+  error: [],
 }
 
 //// Initial Action Creator for Payload
@@ -28,6 +33,20 @@ export function getUrlImage(value) {
   return {
     type: GETURLIMAGE,
     payload: value
+  }
+}
+
+export function editUserName(id, name) {
+  return {
+    type: EDITUSERNAME,
+    payload: axios.put('api/editUserAccount', { userID: id, userName: name })
+  }
+}
+
+export function postUserProfileUrlImage(id, profilePicture) {
+  return {
+    type: POSTPROFILEPIRCTURE,
+    payload: axios.put('/api/postNewprofilePic', { userID: id, photo: profilePicture })
   }
 }
 
@@ -53,6 +72,21 @@ export default function userReducer(state = initialState, action) {
     return {
         ...state,
         urlImage: action.payload
+    }
+    case EDITUSERNAME: 
+    return {
+      ...state,
+      username: action.payload.data[0].user_username
+    }
+    case `${ EDITUSERNAME }_REJECTED`: 
+    return {
+      ...state,
+      error: action.payload.data
+    }
+    case POSTPROFILEPIRCTURE:
+    return {
+      ...state,
+      profile_picture: action.payload.data[0].profile_pic
     }
 
     default:

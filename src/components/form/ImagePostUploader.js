@@ -6,7 +6,7 @@ import noIMage from '../../image/No_Image_Available.jpg';
 import { connect } from 'react-redux';
 import { getUrlImage } from '../../duck/reducer';
 
-class ProfilePage extends Component {
+class ImagePostUploader extends Component {
   state = {
     username: "",
     avatar: "",
@@ -75,4 +75,4 @@ function mapStateToProps(state) {
   return state
 }
  
-export default connect(mapStateToProps, { getUrlImage }) (ProfilePage);
+export default connect(mapStateToProps, { getUrlImage }) (ImagePostUploader);
