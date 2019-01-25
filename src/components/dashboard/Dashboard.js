@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
 import css from './dashboard.scss';
 
-const SERVER_URL_ENDPOINT = 'http://localhost:3003';
+const SERVER_URL_ENDPOINT = 'http://localhost:3005';
 
 class Dashboard extends Component {
   constructor(props) {

@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import css from './auth.scss';
 import logo from '../../image/mstile-150x150.png';
 
-const SERVER_URL_ENDPOINT = 'http://localhost:3003';
+const SERVER_URL_ENDPOINT = 'http://localhost:3005';
 
 class Auth extends Component {
   constructor(props) {
