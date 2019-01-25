@@ -15,7 +15,7 @@ const userLogin = (req, res, next) => {
 
 
 const userRegister = (req, res, next) => {
-
+  // console.log(req.body);
   const dbInstace = req.app.get('db');
 
   dbInstace.register_newUser(req.body.userName, req.body.passWord, `https://robohash.org/${ req.body.userName }`)

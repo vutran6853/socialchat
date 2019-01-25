@@ -49,12 +49,12 @@ class Post extends Component {
           <div key={ value.post_id } className='innerPostBox'>
             <div className='profileBox'>
               <img src={ value.user_profile_pic } alt={ value.user_username }></img>
-              <p>Name: { value.user_username }</p>
+              <p>{ value.user_username }</p>
             </div>
             <div className='innerPostImageBox'>
               <p>Title: { value.post_title }</p>
               <img src={ value.post_img } alt={ value.post_img }></img>
-              <p>post_content: { value.post_content }</p>
+              <p>{ value.post_content }</p>
             </div>
             <div className='innderPostFeedback'>
               <button onClick={ () => this.handleLikeOrDislikeThumb(1) } className='onHoverEffect'>

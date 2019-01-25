@@ -4,6 +4,7 @@ import { getUserInfo } from '../../duck/reducer';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import css from './auth.scss';
+import Axios from 'axios';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 

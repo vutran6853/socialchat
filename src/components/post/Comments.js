@@ -26,10 +26,10 @@ function CommentsSection(props) {
               <span>Like { value.comments_likes }</span>
               <i className="fas fa-thumbs-up"></i>
             </button>
-            <button className='onHoverEffect'>
+            {/* <button className='onHoverEffect'>
               <span>Dislike { value.comments_dislike }</span>
               <i className="fas fa-thumbs-down"></i>
-            </button>
+            </button> */}
           </div>
          
         </div>

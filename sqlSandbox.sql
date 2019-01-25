@@ -3,7 +3,7 @@ CREATE TABLE users (
 	user_username VARCHAR(255) UNIQUE,
 	user_password VARCHAR(255),
 	user_profile_pic TEXT,
-	users_email VARCHAR(255)
+	user_email VARCHAR(255)
 );
 
 INSERT INTO users (user_username, user_password, user_profile_pic)
