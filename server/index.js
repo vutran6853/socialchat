@@ -6,6 +6,7 @@ const cors = require('cors');
 const app = express();
 const massive = require('massive');
 const session = require('express-session');
+const path = require('path'); // Usually moved to the start of file
 
 const { userLogin, userRegister, userByIDPost, userLogout,
         getAllPostBySearch, getAllPostByNoSeach, getSinglePostById,
@@ -18,6 +19,7 @@ const { editUserAccount, postNewprofilePic, postUserEmail, postUserPassword } = 
 app.use(cors());
 app.use(json());
 
+// app.use( express.static( `${__dirname}/../build` ) );
 
 //// Init Session setting. This will save userID in browser 
 // app.use(session({

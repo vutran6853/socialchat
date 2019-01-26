@@ -19,7 +19,7 @@ class Post extends Component {
   componentDidMount() {
     // console.log(this.props.match.params.postId);
 
-    fetch(`${ SERVER_URL_ENDPOINT }/api/getSinglePostById/${ this.props.match.params.postId }`, {
+    fetch(`${ process.env.REACT_APP_SERVER_URL_GETSINGLEPOSTBYID }/${ this.props.match.params.postId }`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })

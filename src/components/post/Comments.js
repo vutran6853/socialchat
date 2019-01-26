@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import css from './post.scss';
 import { lchmod } from 'fs';
 
-const SERVER_URL_ENDPOINT = 'http://localhost:3003';
-
 function CommentsSection(props) {
   let { commentsData } =   props.data
   // console.log('props::', props)
@@ -93,7 +91,7 @@ class Comments extends Component {
                       userId: this.props.userReducer.id, 
                       post_id: this.props.data.post_id }
 
-      fetch(`${ SERVER_URL_ENDPOINT }/api/postUserComment`, {
+      fetch(`${ process.env.REACT_APP_SERVER_URL_POSTUSERCOMMENT }`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(content)

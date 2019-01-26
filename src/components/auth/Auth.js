@@ -6,8 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 import css from './auth.scss';
 import logo from '../../image/mstile-150x150.png';
 
-const SERVER_URL_ENDPOINT = 'http://localhost:3005';
-
 class Auth extends Component {
   constructor(props) {
     super(props);
@@ -46,9 +44,8 @@ class Auth extends Component {
         } else {
           this.props.getUpdateUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic, response[0].user_email)
           // this.props.getUpdateUserInfo(response.data[0].user_id, response.data[0].user_username, response.data[0].user_profile_pic, response.data[0].user_email )
-
-          this.props.history.push('/dashboard')
           this.notify(3, response[0].user_username)
+          this.props.history.push('/dashboard')
         }
       })
       .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));

@@ -4,9 +4,6 @@ import { getUserInfo } from '../../duck/reducer';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import css from './auth.scss';
-import Axios from 'axios';
-
-const SERVER_URL_ENDPOINT = 'http://localhost:3005';
 
 class SignUp extends Component {
   constructor(props) {
@@ -56,7 +53,7 @@ class SignUp extends Component {
     if(this.state.username !== '' && this.state.password !== '') {
      let content = { userName: this.state.username, passWord: this.state.password }
 
-      fetch(`${ SERVER_URL_ENDPOINT }/api/auth/register`, {
+      fetch(`${ process.env.REACT_APP_SERVER_URL_REGISTER }`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(content)

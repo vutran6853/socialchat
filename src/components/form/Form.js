@@ -25,7 +25,7 @@ class Form extends Component {
                      content: this.state.content }
     
     if(contents.title !== '' && contents.content !== '') {
-      fetch(`${ SERVER_URL_ENDPOINT }/api/post/${ id }`, {
+      fetch(`${ process.env.REACT_APP_SERVER_URL_SUBMITPOST }/${ id }`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(contents)

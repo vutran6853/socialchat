@@ -1,13 +1,12 @@
 import axios from "axios";
 
-const SERVER_URL_ENDPOINT = 'http://localhost:3003';
-
 ////  Initial value
 const GETUSERINFO = 'GETUSERINFO'
 const UPDATEUSERINFO = 'UPDATEUSERINFO'
 const GETURLIMAGE = 'GETURLIMAGE'
 const EDITUSERNAME = 'EDITUSERNAME'
 const POSTPROFILEPIRCTURE = 'POSTPROFILEPIRCTURE'
+const USERLOGOUT = 'USERLOGOUT'
 
 ////  Initial state
 const initialState = {
@@ -61,6 +60,14 @@ export function postUserProfileUrlImage(id, profilePicture) {
   }
 }
 
+export function userLogout() {
+  let content = { id: 0, username: '', profile_pic: '', userEmail: '' }
+  return {
+    type: USERLOGOUT,
+    payload: content
+  }
+}
+
 ////  Handle state change
 export default function userReducer(state = initialState, action) {
   switch(action.type) {
@@ -107,7 +114,14 @@ export default function userReducer(state = initialState, action) {
       ...state,
       profile_picture: action.payload.data[0].profile_pic
     }
-
+    case USERLOGOUT:
+    return {
+      ...state,
+      id: action.payload.id,
+      username: action.payload.username,
+      profile_picture: action.payload.profile_pic,
+      userEmail: action.payload.userEmail
+    }
     default:
     return state;
   }

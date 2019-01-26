@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getUserInfo } from '../../duck/reducer';
+import { getUserInfo, userLogout } from '../../duck/reducer';
 import css from './navbar.scss'
 
 class NavBar extends Component {
   constructor(props) {
     super(props);
 
+  }
+
+  handleLogOut = () => {
+    this.props.userLogout()
   }
 
   render() {
@@ -34,7 +38,7 @@ class NavBar extends Component {
           </button>
         </Link>
         <Link to='/'>
-          <button className='button2'>
+          <button className='button2' onClick={ () => this.handleLogOut() }>
             <i className='fas fa-sign-out-alt'></i>
           </button>
         </Link>
@@ -56,4 +60,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-export default connect(mapStateToProps, { getUserInfo })(NavBar);
+export default connect(mapStateToProps, { getUserInfo, userLogout })(NavBar);
