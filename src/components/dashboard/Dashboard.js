@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
 import css from './dashboard.scss';
 
-const SERVER_URL_ENDPOINT = 'http://localhost:3005';
+const SERVER_URL_ENDPOINT = 'http://localhost:3006';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class Dashboard extends Component {
 
       //// If userposts is false AND there is no search string
     } else if(!userposts === false && searchItem == '') {
-      fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPostByNoSeach/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
+      fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPostByNoSearch/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       })

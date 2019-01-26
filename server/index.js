@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const port = process.env.SERVER_PORT || 3005;
+const port = process.env.SERVER_PORT || 3006;
 const { json } = require('body-parser');
 const cors = require('cors');
 const app = express();
@@ -48,7 +48,7 @@ app.post('/api/auth/logout', userLogout)
 ////  Post Endpoint
 app.post('/api/post/:id', userByIDPost)
 app.get('/api/getAllPostBySearch/:id', getAllPostBySearch)
-app.get('/api/getAllPostByNoSeach/:id', getAllPostByNoSeach)
+app.get('/api/getAllPostByNoSearch/:id', getAllPostByNoSeach)
 app.get('/api/getSinglePostById/:id', getSinglePostById)
 app.post('/api/getComments', getComments)
 app.post('/api/postUserComment', postUserComment)

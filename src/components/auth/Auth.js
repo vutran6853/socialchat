@@ -34,7 +34,7 @@ class Auth extends Component {
     if(this.state.username !== '' && this.state.password !== '') {
       let content = { userName: this.state.username, passWord: this.state.password }
 
-      fetch(`${ SERVER_URL_ENDPOINT }/api/auth/login`, {
+      fetch(`${ process.env.REACT_APP_SERVER_URL_LOGIN }`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(content)
