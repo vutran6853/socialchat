@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getUpdateUserInfo } from '../../duck/reducer';
 import { ToastContainer, toast } from 'react-toastify';
+import { Container, Row, Col, Form } from 'reactstrap';
 import "react-toastify/dist/ReactToastify.css";
 import css from './auth.scss';
 import logo from '../../image/mstile-150x150.png';

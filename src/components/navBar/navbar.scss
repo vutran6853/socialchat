@@ -4,8 +4,8 @@
 .navbarBox {
   background-color: map-get($colors , lightPink);
   // border: 2px solid red;
-  height: 100vh;
-  width: 5vw;
+  height: 83rem;
+  width: 8rem;
   float: left;
   position: sticky;
   top: 0rem;
@@ -34,7 +34,7 @@
     // border: 1px solid blue;
     height: 100px;
     width: 100px;
-    margin-top: 57vh;
+    margin-top: 47rem;
     margin-left: 10px;
 
   }
@@ -44,9 +44,11 @@
 @media(max-width: $destop1440MinWidth) {
   .navbarBox {
     background-color: map-get($colors , lightPink);
-    // border: 2px solid red;
+    // border: 5px solid red;
     height: 100vh;
-    width: 7vw;
+    // height: 67rem;
+
+    width: 7rem;
     float: left;
     position: sticky;
     top: 0;
@@ -79,8 +81,49 @@
   }
 }
 
-////  1024 Screen
-@media(max-width: $destop1024MinWidth) {
+//// 1920 * 1080P
+@media(max-width: $destop1920MaxWidth) {
+  .navbarBox {
+    background-color: map-get($colors , lightPink);
+    // border: 5px solid red;
+    height: 100vh;
+    // height: 67rem;
+
+    width: 7rem;
+    float: left;
+    position: sticky;
+    top: 0;
+  
+    // .profileBox {
+    //   // border: 2px solid blue;
+    //   text-align: center;
+    //   img {
+    //     border: 1px solid blue;
+    //     border-radius: 50%;
+    //     height: 70px;
+    //     width: 70px;
+    //   }
+  
+    // }
+  
+    .button1 {
+      // border: 1px solid blue;
+      height: 70px;
+      width: 70px;
+      margin-top: 1rem;
+    }
+  
+    .button2 {
+      // border: 1px solid blue;
+      height: 70px;
+      width: 70px;
+      margin-top: 31.5rem;
+    }
+  }
+}
+
+////  1280 * 720P
+@media(max-width: $destop1280MaxWidth) {
   .navbarBox {
     background-color: map-get($colors , lightPink);
     // border: 2px solid red;
@@ -106,14 +149,17 @@
       // border: 1px solid blue;
       height: 70px;
       width: 70px;
-      margin-top: 15px;
+      margin-top: 1rem;
+      margin-left: 1rem;
     }
   
     .button2 {
       // border: 1px solid blue;
       height: 70px;
       width: 70px;
-      margin-top: 30vh;
+      margin-top: 9rem;
+      margin-left: 1rem;
+
     }
   }
 }

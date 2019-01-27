@@ -78,15 +78,15 @@
     }
   
     .dashboard_search_box {
-      border: 1px solid black;
+      // border: 5px solid black;
       margin-top: 1vw;
       padding: 1vw;
       box-shadow: 5px 5px #888888;
-  
+
       input {
         // border: 1px solid black;
         // display: inline-block;
-        width: 3vw;
+        width: 20rem;
       }
     }
   }
@@ -127,41 +127,43 @@
   }
 }
 
-////  1024 Screen
-@media(max-width: $destop1024MinWidth) {
+
+
+////  1280 * 720P
+@media(max-width: $destop1280MaxWidth) {
   .dashboardbox {
     // border: 2px solid blue;
       // float: right;
   
     .innerdashboardbox {
       // border: 2px solid blue;
-      margin-left: 30vh;
-      margin-right: 40vh;
+      margin-left: 20rem;
+      margin-right: 20rem;
     }
   
     .dashboard_search_box {
       // border: 5px solid black;
-      margin-top: 1vw;
-      margin-left: 1vw;
-      width: 30rem;
-      padding: 1vw;
+      margin-top: 1rem;
+      margin-left: 1rem;
+      width: 35rem;
+      padding: 1rem;
       box-shadow: 5px 5px #888888;
   
       input {
         border: 1px solid black;
         // display: inline-block;
-        width: 33vw;
+        width: 28rem;
       }
     }
   }
   
   .dashboardPostBox {
     border: 1px solid black;
-    // margin: 20px !important; 
+    margin-left: 1rem; 
     box-shadow: 5px 5px #888888;
     height: 150px;
-    width: 30rem;
-  
+    width: 35rem;
+    
     .UserProfilePic {
       border: 1px solid blue;
       border-radius: 50%;
@@ -192,8 +194,8 @@
     //   border: 2px solid black;
     // }
   }
-}
 
+}
 ////  iPad screen size
 @media(max-width: 768px) {
   .dashboardbox {

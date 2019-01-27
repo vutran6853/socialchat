@@ -9,7 +9,7 @@
   h3 {
     border: 1px solid black;
     margin-left: 25rem;
-    margin-top: 10rem;
+    margin-top: 1rem;
     width: 90rem;
     box-shadow: 5px 5px #888888;
     // padding-left: 40rem;
@@ -19,7 +19,7 @@
   .accountFormBox {
     border: 1px solid map-get($colors, myBlue);
     margin-left: 25rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     height: 50rem;
     width: 90rem;
     box-shadow: 5px 5px #888888;
@@ -67,8 +67,8 @@
   }
 }
 
-/// 2k screen
-@media(max-width: $destop1440MinWidth) {
+//// 1920 * 1080P
+@media(max-width: $destop1920MaxWidth) {
   .accountBox {
     border: 1px solid white;
     // margin-left: 10px;
@@ -77,7 +77,7 @@
     h3 {
       border: 1px solid black;
       margin-left: 10rem;
-      margin-top: 3rem;
+      margin-top: 1rem;
       width: 70rem;
       box-shadow: 5px 5px #888888;
       // padding-left: 40rem;
@@ -87,8 +87,8 @@
     .accountFormBox {
       border: 1px solid map-get($colors, myBlue);
       margin-left: 10rem;
-      margin-top: 3rem;
-      height: 50rem;
+      margin-top: 2rem;
+      height: 53rem;
       width: 70rem;
       box-shadow: 5px 5px #888888;
       padding-left: 12rem;
@@ -135,8 +135,8 @@
   }
 }
 
-////  1024 Screen
-@media(max-width: $destop1024MinWidth) {
+////  1280 * 720P
+@media(max-width: $destop1280MaxWidth) {
   .accountBox {
     border: 1px solid white;
     // margin-left: 10px;
@@ -156,11 +156,12 @@
       border: 1px solid map-get($colors, myBlue);
       margin-left: 10rem;
       margin-top: 1rem;
-      height: 35rem;
+      height: 32rem;
       width: 50rem;
       box-shadow: 5px 5px #888888;
       padding-left: 4rem;
       padding-top: 4rem;
+
       p {
         border: 1px solid black;
         // margin-top: 5px;

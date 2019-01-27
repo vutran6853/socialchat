@@ -5,8 +5,6 @@
   border: 1px solid  white;
   // height: 99vh;
 
-
-
   .innerPostBox {
     border: 1px solid black;
     // height: 50rem;
@@ -25,11 +23,8 @@
         width: 70px;
       }
     }
-
-    
   }
 
-  
   .innerPostImageBox {
     // border: 5px solid blue;
     text-align: center;
@@ -73,15 +68,12 @@
     .onHoverEffect:hover {
       border: 1px solid yellow;
     }
-
-
   }
 
   .commentBox {
     // border: 1px solid lightcoral;
     margin-top: 10px;
     background-color: whitesmoke;
-    
 
     .commentProfileBox {
       // border: 5px solid black;
@@ -99,7 +91,7 @@
         display: inline;
         margin-left: 5px;
       }
-  
+
       img {
         border: 1px solid blue;
         border-radius: 50%;
@@ -163,5 +155,322 @@
       width: 70px;
     }
   }
-  
 } 
+
+//// 1920 * 1080P
+@media(max-width: $destop1920MaxWidth) {
+  .postViewBox {
+    border: 1px solid  white;
+    // height: 99vh;
+  
+    .innerPostBox {
+      border: 1px solid black;
+      // height: 50rem;
+      width: 50rem;
+      margin-left: 30vw;
+      margin-top: 5vh;
+      box-shadow: 5px 5px #888888;
+  
+      .profileBox {
+        text-align: center;
+  
+        img {
+          border: 1px solid blue;
+          border-radius: 50%;
+          height: 70px;
+          width: 70px;
+        }
+      }
+    }
+  
+    .innerPostImageBox {
+      // border: 5px solid blue;
+      text-align: center;
+      height: 43rem;
+      width: 50rem;  
+  
+      img {
+        height: 30rem;
+        width: 40rem;  
+      }
+  
+      p {
+        border: 1px solid black;
+        margin-top: 2rem;
+        box-shadow: 3px 3px #888888;
+        height: 4rem;
+        width: 45rem;
+        margin-left: 3rem;
+      }
+    }
+  
+    .innderPostFeedback {
+      // border: 1px solid black;
+      // margin-left: 10px;
+      // display: inline-flex;
+  
+      button {
+        // border: 1px solid black;
+        margin-left: 1rem;
+        float: right;
+  
+      }
+  
+      i {
+        margin-left: 35px;
+        // border: 1px solid black;
+        // height: 40px;
+        // width: 40px;
+      }
+  
+      .onHoverEffect:hover {
+        border: 1px solid yellow;
+      }
+    }
+  
+    .commentBox {
+      // border: 1px solid lightcoral;
+      margin-top: 10px;
+      background-color: whitesmoke;
+  
+      .commentProfileBox {
+        // border: 5px solid black;
+        // float: left;
+        margin-top: 10px;
+  
+        input {
+          border: 1px solid black;
+          width: 40rem;
+          margin-left: 10px;
+        }
+  
+        p {
+          // border: 5px solid gray;
+          display: inline;
+          margin-left: 5px;
+        }
+  
+        img {
+          border: 1px solid blue;
+          border-radius: 50%;
+          height: 70px;
+          width: 70px;
+        }
+      }
+      
+      .commentContextBox {
+        // border: 1px solid gray;
+        // margin-left: 5rem;
+  
+        p {
+          // border: 1px solid blue;
+          padding-left: 5rem;
+        }
+    
+        i {
+          margin-left: 35px;
+          // border: 1px solid black;
+          // height: 40px;
+          // width: 40px;
+        }
+  
+        button {
+          border: 1px solid blue;
+          margin-left: 1rem;
+          // float: right;
+          // display: grid;
+          // grid-auto-flow:
+          // flex-direction: row-reverse;
+        }
+    
+        .onHoverEffect:hover {
+          border: 1px solid yellow;
+        }
+      }
+    }
+  
+    .commentProfileBox2 {
+      // border: 5px solid black;
+      // float: left;
+      margin-top: 10px;
+  
+      input {
+        border: 1px solid black;
+        width: 40rem;
+        margin-left: 10px;
+      }
+  
+      p {
+        // border: 5px solid gray;
+        display: inline;
+        margin-left: 5px;
+      }
+  
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 70px;
+        width: 70px;
+      }
+    }
+  } 
+}
+
+////  1280 * 720P
+@media(max-width: $destop1280MaxWidth) {
+  .postViewBox {
+    border: 1px solid  white;
+    // height: 99vh;
+  
+    .innerPostBox {
+      border: 1px solid black;
+      // height: 50rem;
+      width: 50rem;
+      margin-left: 10rem;
+      margin-top: 1rem;
+      box-shadow: 5px 5px #888888;
+  
+      .profileBox {
+        text-align: center;
+  
+        img {
+          border: 1px solid blue;
+          border-radius: 50%;
+          height: 70px;
+          width: 70px;
+        }
+      }
+    }
+  
+    .innerPostImageBox {
+      // border: 5px solid blue;
+      text-align: center;
+      height: 20rem !important;
+      width: 50rem;
+  
+      img {
+        height: 10rem;
+        width: 10rem;  
+      }
+  
+      p {
+        border: 1px solid black;
+        // margin-top: 2rem;
+        box-shadow: 3px 3px #888888;
+        height: 2rem;
+        width: 45rem;
+        margin-left: 3rem;
+      }
+    }
+  
+    .innderPostFeedback {
+      // border: 1px solid black;
+      // margin-left: 10px;
+      // display: inline-flex;
+  
+      button {
+        // border: 1px solid black;
+        margin-left: 1rem;
+        float: right;
+  
+      }
+  
+      i {
+        margin-left: 35px;
+        // border: 1px solid black;
+        // height: 40px;
+        // width: 40px;
+      }
+  
+      .onHoverEffect:hover {
+        border: 1px solid yellow;
+      }
+    }
+  
+    .commentBox {
+      // border: 1px solid lightcoral;
+      margin-top: 10px;
+      background-color: whitesmoke;
+  
+      .commentProfileBox {
+        // border: 5px solid black;
+        // float: left;
+        margin-top: 10px;
+  
+        input {
+          border: 1px solid black;
+          width: 40rem;
+          margin-left: 10px;
+        }
+  
+        p {
+          // border: 5px solid gray;
+          display: inline;
+          margin-left: 5px;
+        }
+  
+        img {
+          border: 1px solid blue;
+          border-radius: 50%;
+          height: 70px;
+          width: 70px;
+        }
+      }
+      
+      .commentContextBox {
+        // border: 1px solid gray;
+        // margin-left: 5rem;
+  
+        p {
+          // border: 1px solid blue;
+          padding-left: 5rem;
+        }
+    
+        i {
+          margin-left: 35px;
+          // border: 1px solid black;
+          // height: 40px;
+          // width: 40px;
+        }
+  
+        button {
+          border: 1px solid blue;
+          margin-left: 1rem;
+          // float: right;
+          // display: grid;
+          // grid-auto-flow:
+          // flex-direction: row-reverse;
+        }
+    
+        .onHoverEffect:hover {
+          border: 1px solid yellow;
+        }
+      }
+    }
+  
+    .commentProfileBox2 {
+      // border: 5px solid black;
+      // float: left;
+      margin-top: 10px;
+  
+      input {
+        border: 1px solid black;
+        width: 40rem;
+        margin-left: 10px;
+      }
+  
+      p {
+        // border: 5px solid gray;
+        display: inline;
+        margin-left: 5px;
+      }
+  
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 70px;
+        width: 70px;
+      }
+    }
+  }
+}
