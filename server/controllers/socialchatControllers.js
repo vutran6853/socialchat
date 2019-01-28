@@ -6,7 +6,7 @@ const userLogin = (req, res, next) => {
 
   dbInstace.login_user(req.body.userName, req.body.passWord)
   .then((response) => {
-    console.log(response);
+    // console.log(response);
     res.status(200).send(response)
   })
   .catch((error) => console.log(`Danger! BackEnd error ${ error }`));

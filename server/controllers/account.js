@@ -25,7 +25,7 @@ const postNewprofilePic = (req, res, next) => {
 }
 
 const postUserEmail = (req, res, next) => {
-  console.log(req.body)
+  // console.log(req.body)
 
   const dbInstace = req.app.get('db');
 

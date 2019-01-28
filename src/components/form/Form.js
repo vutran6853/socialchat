@@ -4,6 +4,8 @@ import css from './form.scss';
 import NavBar from '../navBar/NavBar';
 import noIMage from '../../image/No_Image_Available.jpg';
 import ImagePostUploader from './ImagePostUploader';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
@@ -32,12 +34,13 @@ class Form extends Component {
       })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        // console.log(response);
+        this.notify(1)
         this.props.history.push('/dashboard')
       })
       .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
     } else {
-      console.log('placeholder for pop up message enter enter');
+      this.notify(1.5)
     }
   }
 
@@ -50,12 +53,29 @@ class Form extends Component {
     console.log('value::', value);
   } 
 
+  ////  notify message 
+  notify = (number) => {
+    // console.log(number);
+    switch(number) {
+      case 1:
+      return toast.success(`Post Success ^.^ `, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      case 1.5:
+      return toast.error(`Post was unsuccess`, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+
+    }
+  }
+
   render() {
     let imgSrc = this.state.imageUrl ? this.state.imageUrl : noIMage;
 
     return (
       <div className='formBox'>
         <NavBar/>
+        <ToastContainer autoClose={ 3000 } />
           <div className='innerFormBox'>
             <h3>New Post</h3>
             <div className='innerFormInputBox'>

@@ -45,8 +45,9 @@ class Auth extends Component {
         } else {
           this.props.getUpdateUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic, response[0].user_email)
           // this.props.getUpdateUserInfo(response.data[0].user_id, response.data[0].user_username, response.data[0].user_profile_pic, response.data[0].user_email )
-          this.notify(3, response[0].user_username)
           this.props.history.push('/dashboard')
+          this.notify(2, response[0].user_username)
+
         }
       })
       .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));

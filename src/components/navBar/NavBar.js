@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getUserInfo, userLogout } from '../../duck/reducer';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 import css from './navbar.scss'
 
 class NavBar extends Component {
@@ -12,7 +14,19 @@ class NavBar extends Component {
   }
 
   handleLogOut = () => {
+    this.notify(1)
     this.props.userLogout()
+  }
+
+  ////  notify message 
+  notify = (number) => {
+    // console.log(number);
+    switch(number) {
+      case 1:
+      return toast.success(`Logout Success ^.^ `, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
   }
 
   render() {
