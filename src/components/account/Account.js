@@ -63,7 +63,6 @@ class Account extends Component {
 
         axios.put('/api/postUserEmail', { id: this.props.userReducer.id, email: userEmail })
         .then((response) => {
-          // console.log(response)
           this.props.getUpdateUserInfo(response.data[0].user_id, response.data[0].user_username, response.data[0].user_profile_pic, response.data[0].user_email )
           this.notify(2.5)
           this.setState({ userEmail: '' })
@@ -85,9 +84,7 @@ class Account extends Component {
 
         axios.put('/api/postUserPassword', { id: this.props.userReducer.id, password: newUserPassword })
         .then((response) => {
-          console.log(response)
           if(response.status === 200) {
-            console.log(true);
             this.notify(3.5)
             this.setState({ newUserPassword: '' })
           } else {
@@ -96,7 +93,6 @@ class Account extends Component {
         })
         .catch((error) => console.log('What happen here?', error));
 
-
     } else {
       return null
     }
@@ -104,9 +100,9 @@ class Account extends Component {
 
   handlePostNewUserName = (keyCode) => {
     if(keyCode === 'Enter') {
+
       this.props.editUserName(this.props.userReducer.id, this.state.newUsername)
       .then((response) => {
-        // console.log(response.value.data)
           this.props.getUserInfo(response.value.data[0].user_id, response.value.data[0].user_username, response.value.data[0].user_profile_pic)
           this.setState({ editAccount: true })
           this.notify(1.5)
@@ -117,42 +113,41 @@ class Account extends Component {
         }
       });
     } else {
-
+      return null
     }
   }
 
-    ////  notify message 
-    notify = (number) => {
-      switch(number) {
-        case 1: 
-        return toast.error('Username is already taken. Try again', {
-          position: toast.POSITION.TOP_RIGHT,
-        });
-        case 1.5:
-        return toast.success('Username updated ^.^ ', {
-          position: toast.POSITION.TOP_RIGHT,
-        });
-        case 2:
-        return toast.error('Invalid Email. Try again', {
-          position: toast.POSITION.TOP_RIGHT,
-        });
-        case 2.5:
-        return toast.error('Email updated ^.^ ', {
-          position: toast.POSITION.TOP_RIGHT,
-        });
-        case 3:
-        return toast.error('Something went wrong. Please try later', {
-          position: toast.POSITION.TOP_RIGHT,
-        });
-        case 3.5:
-        return toast.success('Password updated ^.^ ', {
-          position: toast.POSITION.TOP_RIGHT,
-        });
-      }
+  ////  notify message 
+  notify = (number) => {
+    switch(number) {
+      case 1: 
+      return toast.error('Username is already taken. Try again', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      case 1.5:
+      return toast.success('Username updated ^.^ ', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      case 2:
+      return toast.error('Invalid Email. Try again', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      case 2.5:
+      return toast.error('Email updated ^.^ ', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      case 3:
+      return toast.error('Something went wrong. Please try later', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      case 3.5:
+      return toast.success('Password updated ^.^ ', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
+  }
 
   render() {
-    // console.log('props', this.props.userReducer);
     return (
       <div className='accountBox'>
         <NavBar/>

@@ -5,6 +5,7 @@ import NavBar from '../navBar/NavBar';
 import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
 import css from './dashboard.scss';
+import axios from 'axios';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3006';
 
@@ -17,7 +18,7 @@ class Dashboard extends Component {
       userposts: true,
      };
   }
-  
+
   componentDidMount() {
     this.handleGetPost()
     // this.notify()
@@ -35,6 +36,7 @@ class Dashboard extends Component {
 
     ////  If userposts is true AND there is a search string
     if(userposts === true && searchItem !== '') {
+      // axios.get(`/api/getAllPostBySearch/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`)
       fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPostBySearch/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -48,7 +50,8 @@ class Dashboard extends Component {
       .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
 
       //// If userposts is false AND there is no search string
-    } else if(!userposts === false && searchItem == '') {
+      } else if(!userposts === false && searchItem == '') {
+      // axios.get(`/api/getAllPostByNoSearch/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`)
       fetch(`${ SERVER_URL_ENDPOINT }/api/getAllPostByNoSearch/${ id }?userposts=${ userposts }&searchItem=${ searchItem }`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -61,10 +64,10 @@ class Dashboard extends Component {
       })
       .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
 
-    } else {
-      console.log(false);
-    }
-
+      } else {
+        // console.log(false);
+        return null
+      }
   }
 
   handleReset = () => {
