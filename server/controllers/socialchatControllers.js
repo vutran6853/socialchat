@@ -1,9 +1,9 @@
 const axios = require('axios');
 
 const userLogin = (req, res, next) => {
-
+  // console.log('hit');
   const dbInstace = req.app.get('db');
-
+// console.log(req);
   dbInstace.login_user(req.body.userName, req.body.passWord)
   .then((response) => {
     // console.log(response);
@@ -15,7 +15,7 @@ const userLogin = (req, res, next) => {
 
 
 const userRegister = (req, res, next) => {
-  // console.log(req.body);
+  console.log(req.body);
   const dbInstace = req.app.get('db');
 
   dbInstace.register_newUser(req.body.userName, req.body.passWord, `https://robohash.org/${ req.body.userName }`)

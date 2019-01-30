@@ -6,6 +6,7 @@ import { Container, Row, Col, Form } from 'reactstrap';
 import "react-toastify/dist/ReactToastify.css";
 import css from './auth.scss';
 import logo from '../../image/mstile-150x150.png';
+import axios from 'axios';
 
 class Auth extends Component {
   constructor(props) {
@@ -33,10 +34,11 @@ class Auth extends Component {
     if(this.state.username !== '' && this.state.password !== '') {
       let content = { userName: this.state.username, passWord: this.state.password }
 
+      // axios.post('/api/auth/login', { userName: this.state.username, passWord: this.state.password })
       fetch(`${ process.env.REACT_APP_SERVER_URL_LOGIN }`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(content)
+        body: JSON.stringify({ userName: this.state.username, passWord: this.state.password } )
       })
       .then((response) => response.json())
       .then((response) => {
@@ -47,7 +49,6 @@ class Auth extends Component {
           // this.props.getUpdateUserInfo(response.data[0].user_id, response.data[0].user_username, response.data[0].user_profile_pic, response.data[0].user_email )
           this.props.history.push('/dashboard')
           this.notify(2, response[0].user_username)
-
         }
       })
       .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
@@ -77,6 +78,7 @@ class Auth extends Component {
   //// Register user profile
   handleRegister = (e) => {
     e.preventDefault();
+    
     this.props.history.push('/signUp')
   }
 
