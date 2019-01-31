@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from '../navBar/NavBar';
 import Comments from './Comments';
 import css from './post.scss';
+import axios from 'axios';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
@@ -18,7 +19,7 @@ class Post extends Component {
 
   componentDidMount() {
     // console.log(this.props.match.params.postId);
-
+    // axios.get(`/api/getSinglePostById/${ this.props.match.params.postId }`)
     fetch(`${ process.env.REACT_APP_SERVER_URL_GETSINGLEPOSTBYID }/${ this.props.match.params.postId }`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },

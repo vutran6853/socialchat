@@ -474,3 +474,319 @@
     }
   }
 }
+
+////  iPad screen size
+@media(max-width: 768px) {
+  .postViewBox {
+    border: 1px solid  white;
+    // height: 99vh;
+  
+    .innerPostBox {
+      border: 1px solid black;
+      // height: 50rem;
+      width: 40rem;
+      margin-left: 6rem;
+      margin-top: 1rem;
+      box-shadow: 5px 5px #888888;
+  
+      .profileBox {
+        text-align: center;
+  
+        img {
+          border: 1px solid blue;
+          border-radius: 50%;
+          height: 70px;
+          width: 70px;
+        }
+      }
+    }
+  
+    .innerPostImageBox {
+      // border: 1px solid blue;
+      text-align: center;
+      height: 20rem !important;
+      width: 40rem;
+  
+      img {
+        height: 10rem;
+        width: 10rem;  
+      }
+  
+      p {
+        border: 1px solid black;
+        // margin-top: 2rem;
+        box-shadow: 3px 3px #888888;
+        height: 2rem;
+        width: 30rem;
+        margin-left: 3rem;
+      }
+    }
+  
+    .innderPostFeedback {
+      // border: 1px solid black;
+      // margin-left: 10px;
+      // display: inline-flex;
+  
+      button {
+        // border: 1px solid black;
+        margin-left: 1rem;
+        float: right;
+      }
+  
+      i {
+        margin-left: 35px;
+        // border: 1px solid black;
+        // height: 40px;
+        // width: 40px;
+      }
+  
+      .onHoverEffect:hover {
+        border: 1px solid yellow;
+      }
+    }
+  
+    .commentBox {
+      // border: 1px solid lightcoral;
+      margin-top: 10px;
+      background-color: whitesmoke;
+  
+      .commentProfileBox {
+        // border: 5px solid black;
+        // float: left;
+        margin-top: 10px;
+  
+        input {
+          border: 1px solid black;
+          width: 40rem;
+          margin-left: 10px;
+        }
+  
+        p {
+          // border: 5px solid gray;
+          display: inline;
+          margin-left: 5px;
+        }
+  
+        img {
+          border: 1px solid blue;
+          border-radius: 50%;
+          height: 70px;
+          width: 70px;
+        }
+      }
+      
+      .commentContextBox {
+        // border: 1px solid gray;
+        // margin-left: 5rem;
+  
+        p {
+          // border: 1px solid blue;
+          padding-left: 5rem;
+        }
+    
+        i {
+          margin-left: 35px;
+          // border: 1px solid black;
+          // height: 40px;
+          // width: 40px;
+        }
+  
+        button {
+          border: 1px solid blue;
+          margin-left: 1rem;
+          // float: right;
+          // display: grid;
+          // grid-auto-flow:
+          // flex-direction: row-reverse;
+        }
+    
+        .onHoverEffect:hover {
+          border: 1px solid yellow;
+        }
+      }
+    }
+  
+    .commentProfileBox2 {
+      // border: 5px solid black;
+      // float: left;
+      margin-top: 10px;
+  
+      input {
+        border: 1px solid black;
+        width: 35rem;
+        margin-left: 5px;
+      }
+  
+      p {
+        // border: 5px solid gray;
+        display: inline;
+        margin-left: 5px;
+      }
+  
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 70px;
+        width: 70px;
+      }
+    }
+  }
+}
+
+//// Galaxy Landscape
+@media(max-width: $Moblie640MaxWidth) and (max-height: $Moblie360MaxHeight) {
+  .postViewBox {
+    border: 1px solid  white;
+    // height: 99vh;
+  
+    .innerPostBox {
+      border: 1px solid black;
+      // height: 50rem;
+      width: 40rem;
+      margin-left: 6rem;
+      margin-top: 1rem;
+      box-shadow: 5px 5px #888888;
+  
+      .profileBox {
+        text-align: center;
+  
+        img {
+          border: 1px solid blue;
+          border-radius: 50%;
+          height: 70px;
+          width: 70px;
+        }
+      }
+    }
+  
+    .innerPostImageBox {
+      // border: 1px solid blue;
+      text-align: center;
+      height: 20rem !important;
+      width: 40rem;
+  
+      img {
+        height: 10rem;
+        width: 10rem;  
+      }
+  
+      p {
+        border: 1px solid black;
+        // margin-top: 2rem;
+        box-shadow: 3px 3px #888888;
+        height: 2rem;
+        width: 30rem;
+        margin-left: 3rem;
+      }
+    }
+  
+    .innderPostFeedback {
+      // border: 1px solid black;
+      // margin-left: 10px;
+      // display: inline-flex;
+  
+      button {
+        // border: 1px solid black;
+        margin-left: 1rem;
+        float: right;
+      }
+  
+      i {
+        margin-left: 35px;
+        // border: 1px solid black;
+        // height: 40px;
+        // width: 40px;
+      }
+  
+      .onHoverEffect:hover {
+        border: 1px solid yellow;
+      }
+    }
+  
+    .commentBox {
+      // border: 1px solid lightcoral;
+      margin-top: 10px;
+      background-color: whitesmoke;
+  
+      .commentProfileBox {
+        // border: 5px solid black;
+        // float: left;
+        margin-top: 10px;
+  
+        input {
+          border: 1px solid black;
+          width: 40rem;
+          margin-left: 10px;
+        }
+  
+        p {
+          // border: 5px solid gray;
+          display: inline;
+          margin-left: 5px;
+        }
+  
+        img {
+          border: 1px solid blue;
+          border-radius: 50%;
+          height: 70px;
+          width: 70px;
+        }
+      }
+      
+      .commentContextBox {
+        // border: 1px solid gray;
+        // margin-left: 5rem;
+  
+        p {
+          // border: 1px solid blue;
+          padding-left: 5rem;
+        }
+    
+        i {
+          margin-left: 35px;
+          // border: 1px solid black;
+          // height: 40px;
+          // width: 40px;
+        }
+  
+        button {
+          border: 1px solid blue;
+          margin-left: 1rem;
+          // float: right;
+          // display: grid;
+          // grid-auto-flow:
+          // flex-direction: row-reverse;
+        }
+    
+        .onHoverEffect:hover {
+          border: 1px solid yellow;
+        }
+      }
+    }
+  
+    .commentProfileBox2 {
+      // border: 5px solid black;
+      // float: left;
+      margin-top: 10px;
+  
+      input {
+        border: 1px solid black;
+        width: 35rem;
+        margin-left: 5px;
+      }
+  
+      p {
+        // border: 5px solid gray;
+        display: inline;
+        margin-left: 5px;
+      }
+  
+      img {
+        border: 1px solid blue;
+        border-radius: 50%;
+        height: 70px;
+        width: 70px;
+      }
+    }
+  }
+}

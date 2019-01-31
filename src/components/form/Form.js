@@ -6,6 +6,7 @@ import noIMage from '../../image/No_Image_Available.jpg';
 import ImagePostUploader from './ImagePostUploader';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import axios from 'axios';
 
 const SERVER_URL_ENDPOINT = 'http://localhost:3003';
 
@@ -27,6 +28,9 @@ class Form extends Component {
                      content: this.state.content }
     
     if(contents.title !== '' && contents.content !== '') {
+      // axios.post(`/api/post/${ id }`, { title: this.state.title, 
+      //   imageUrl: this.props.userReducer.urlImage, 
+      //   content: this.state.content })
       fetch(`${ process.env.REACT_APP_SERVER_URL_SUBMITPOST }/${ id }`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

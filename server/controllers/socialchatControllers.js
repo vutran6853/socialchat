@@ -1,26 +1,36 @@
 const axios = require('axios');
+const bcrypt = require('bcryptjs');
 
 const userLogin = (req, res, next) => {
-  // console.log('hit');
   const dbInstace = req.app.get('db');
-// console.log(req);
-  dbInstace.login_user(req.body.userName, req.body.passWord)
+
+  dbInstace.login_user(req.body.userName)
   .then((response) => {
-    // console.log(response);
-    res.status(200).send(response)
+
+    if(!response[0]) {
+      res.status(409).send(response)
+    } else {
+      const isAuthenticated = bcrypt.compareSync(req.body.passWord, response[0].user_password);
+
+      if(isAuthenticated) {
+        res.status(200).send(response)
+      } else {
+        console.log('placeholder');
+      }
+    }
   })
   .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
-
 }
 
 
 const userRegister = (req, res, next) => {
-  console.log(req.body);
-  const dbInstace = req.app.get('db');
 
-  dbInstace.register_newUser(req.body.userName, req.body.passWord, `https://robohash.org/${ req.body.userName }`)
+  const dbInstace = req.app.get('db');
+  const salt = bcrypt.genSaltSync(10)
+  const hashPassword = bcrypt.hashSync(req.body.passWord, salt)
+
+  dbInstace.register_newUser(req.body.userName, hashPassword, `https://robohash.org/${ req.body.userName }`)
   .then((response) => {
-    console.log(response)
     res.status(200).send(response)
   })
   .catch((error) => res.status(400).send(error));
@@ -35,8 +45,6 @@ const userLogout = (req, res, next) => {
 
 }
 
-
-
 const userByIDPost = (req, res, next) => {
   let { title, imageUrl, content } = req.body;
 
@@ -44,7 +52,6 @@ const userByIDPost = (req, res, next) => {
 
   dbInstace.userSubmitPost(req.params.id, title, imageUrl, content)
   .then((response) => {
-    // console.log(response)
     res.status(200).send(response)
   })
   .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
@@ -52,9 +59,6 @@ const userByIDPost = (req, res, next) => {
 }
 
 const getAllPostBySearch = (req, res, next) => {
-  // console.log('Line 67:', req.query);
-  // console.log('Line 68:', req.params);
-
   let { userposts, searchItem } = req.query;
   let { id } = req.params;
 
@@ -62,11 +66,9 @@ const getAllPostBySearch = (req, res, next) => {
 
   dbInstace.allPostBySearch(searchItem)
   .then((response) => {
-    // console.log(response)
     res.status(200).send(response)
   })
   .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
-
 }
 
 const getAllPostByNoSeach = (req, res, next) => {
@@ -77,11 +79,9 @@ const getAllPostByNoSeach = (req, res, next) => {
 
   dbInstace.allPostByNoSeach(id)
   .then((response) => {
-    // console.log(response)
     res.status(200).send(response)
   })
   .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
-
 }
 
 const getSinglePostById = (req, res, next) => {
@@ -91,11 +91,9 @@ const getSinglePostById = (req, res, next) => {
 
   dbInstace.singlePostById(id)
   .then((response) => {
-    // console.log(response)
     res.status(200).send(response)
   })
   .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
-
 }
 
 const getComments = (req, res, next) => {
@@ -104,26 +102,20 @@ const getComments = (req, res, next) => {
 
   dbInstace.getCommentsByID(req.body.post_id)
   .then((response) => {
-    // console.log(response)
     res.status(200).send(response)
   })
   .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
-
 }
 
 const postUserComment = (req, res, next) => {
-  console.log(req.body);
 
   const dbInstace = req.app.get('db');
 
   dbInstace.postUserComment(req.body.userInput, req.body.userId, req.body.post_id)
   .then((response) => {
-    console.log(response)
-    // res.status(200).send(response)
+    res.status(200).send(response)
   })
   .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
-
-
 }
 
 module.exports = {
