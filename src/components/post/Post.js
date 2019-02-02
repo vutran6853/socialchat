@@ -26,8 +26,10 @@ class Post extends Component {
     })
     .then((response) => response.json())
     .then((response) => {
-      // console.log(response);
+      console.log(response);
       this.setState({ posts: response })
+      this.setState({ countThumbsUp: response[0].post_likes ? null : 0 })
+      this.setState({ countThumbsDown: response[0].post_dislikes ? null : 0 })
     })
     .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
   }
@@ -36,10 +38,28 @@ class Post extends Component {
     // console.log('number', number);
     if(number === 1) {
       this.setState({ countThumbsUp: this.state.countThumbsUp + 1 })
+      this.haneleCountThumbPost('like')
     } else {
       this.setState({ countThumbsDown: this.state.countThumbsDown + 1 })
+      this.haneleCountThumbPost('dislike')
     }
   }
+
+  ////  Upload count (like) or (dislike) to Database 
+  haneleCountThumbPost = (string) => {
+    let { countThumbsUp, countThumbsDown, posts } = this.state
+
+    axios.put(`/api/post/likeOrDislike`, { like: string === 'like' ?  countThumbsUp + 1 : countThumbsUp, 
+                                           dislike: string === 'dislike' ? countThumbsDown + 1 : countThumbsDown, 
+                                           id: posts[0].post_id 
+    })
+    .then((response) => {
+      this.setState({ countThumbsUp: response.data[0].post_likes })
+      this.setState({ countThumbsDown: response.data[0].post_dislikes })
+    })
+    .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
+  }
+
 
   render() {
     let { posts } = this.state;

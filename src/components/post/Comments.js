@@ -6,7 +6,7 @@ import { lchmod } from 'fs';
 
 function CommentsSection(props) {
   let { commentsData } =   props.data
-  // console.log('props::', props)
+  console.log('props::', props)
   if (!props.data.showComments) {
     return null
   } else {
@@ -19,8 +19,8 @@ function CommentsSection(props) {
             <p>{ value.user_username }</p>
           </div>
           <div className='commentContextBox'>
-            <p>comments: { value.comments_text }</p>
-            <button className='onHoverEffect'>
+            <p>{ value.comments_text }</p>
+            <button className='onHoverEffect' onClick={ () => props.handleThumbUp(value) }>
               <span>Like { value.comments_likes }</span>
               <i className="fas fa-thumbs-up"></i>
             </button>
@@ -37,7 +37,7 @@ function CommentsSection(props) {
 }
 
 function UserInputComment(props) {
-  console.log('props::', props)
+  // console.log('props::', props)
 
   if (!props.data.showComments) {
     return null
@@ -62,11 +62,12 @@ class Comments extends Component {
       showComments: false,
       commentsData: [],
       userInputComments: '',
+      thumbUpCommentData: {}
     }
   }
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
     axios.post('/api/getComments', { post_id: this.props.data.post_id })
     .then((response) => {
       // console.log(response.data);
@@ -74,6 +75,7 @@ class Comments extends Component {
     })
     .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
   }
+
 
   handleToggleClick = ()  => {
     this.setState(prevState => ({
@@ -109,11 +111,23 @@ class Comments extends Component {
       .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
       
       this.setState({ userInputComments: '' })
-
       
     } else {
       console.log(false);
     }
+  }
+
+  handleThumbUp = (value) => {
+   let likeObject = { comments_id: value.comments_id, comments_likes: value.comments_likes }
+
+    axios.put('/api/post/comment/thumbUp', { like: likeObject.comments_likes, 
+                                             comments_id: likeObject.comments_id,
+                                             post_id: this.state.commentsData[0].post_id
+    })
+    .then((response) => {
+      // console.log(response)
+      this.setState({ commentsData: response.data })
+    })
   }
 
   render() {
@@ -133,6 +147,7 @@ class Comments extends Component {
 
         <CommentsSection data={ this.state } 
                          props={ this.props }
+                         handleThumbUp={ this.handleThumbUp }
                          
         />
 

@@ -2,6 +2,7 @@ const axios = require('axios');
 const bcrypt = require('bcryptjs');
 
 const userLogin = (req, res, next) => {
+
   const dbInstace = req.app.get('db');
 
   dbInstace.login_user(req.body.userName)
@@ -118,6 +119,33 @@ const postUserComment = (req, res, next) => {
   .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
 }
 
+const likeOrDislikePost = (req, res, next) => {
+
+  const dbInstace = req.app.get('db');
+
+  dbInstace.UpdatePostLikeOrDislike(req.body.like, req.body.dislike, req.body.id)
+  .then((response) => {
+    res.status(200).send(response)
+  })
+  .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
+}
+
+const likeCommentOfPost = (req, res, next) => {
+
+  const dbInstace = req.app.get('db');
+
+  dbInstace.UpdateLikeCommentOfPost(req.body.like + 1, req.body.comments_id)
+  .then((response) => {
+  })
+  .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
+
+  dbInstace.getCommentsByID(req.body.post_id)
+  .then((response) => {
+    res.status(200).send(response)
+  })
+  .catch((error) => console.log(`Danger! BackEnd error ${ error }`));
+}
+
 module.exports = {
   userLogin,
   userRegister,
@@ -128,4 +156,6 @@ module.exports = {
   getSinglePostById,
   getComments,
   postUserComment,
+  likeOrDislikePost,
+  likeCommentOfPost,
 }

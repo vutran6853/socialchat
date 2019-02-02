@@ -10,7 +10,8 @@ const path = require('path'); // Usually moved to the start of file
 
 const { userLogin, userRegister, userByIDPost, userLogout,
         getAllPostBySearch, getAllPostByNoSeach, getSinglePostById,
-        getComments, postUserComment } = require('./controllers/socialchatControllers');
+        getComments, postUserComment, likeOrDislikePost,
+        likeCommentOfPost } = require('./controllers/socialchatControllers');
 
 const { editUserAccount, postNewprofilePic, postUserEmail, postUserPassword } = require('./controllers/account');
 
@@ -47,13 +48,15 @@ app.post('/api/auth/register', userRegister)
 // app.post('/api/auth/userId', userId)
 app.post('/api/auth/logout', userLogout)
 
-////  Post Endpoint
+////  User Posts Endpoint
 app.post('/api/post/:id', userByIDPost)
 app.get('/api/getAllPostBySearch/:id', getAllPostBySearch)
 app.get('/api/getAllPostByNoSearch/:id', getAllPostByNoSeach)
 app.get('/api/getSinglePostById/:id', getSinglePostById)
 app.post('/api/getComments', getComments)
 app.post('/api/postUserComment', postUserComment)
+app.put('/api/post/likeOrDislike', likeOrDislikePost)
+app.put('/api/post/comment/thumbUp',  likeCommentOfPost)
 
 
 /// Account Endpoint

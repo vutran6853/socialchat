@@ -24,20 +24,29 @@
 
   .button1 {
     // border: 1px solid blue;
+    background-color: map-get($colors , lightPink);
     height: 100px;
     width: 100px;
     margin-top: 15px;
     margin-left: 10px;
   }
 
+  .button1:hover, .button2:hover {
+    border: 1px solid lightblue;
+    color: lightblue;
+  }
+
   .button2 {
     // border: 1px solid blue;
+    background-color: map-get($colors , lightPink);
     height: 100px;
     width: 100px;
     margin-top: 47rem;
     margin-left: 10px;
 
   }
+
+
 }
 
 /// 2k screen
@@ -250,7 +259,7 @@
   .navbarBox {
     background-color: map-get($colors , lightPink);
     // border: 2px solid red;
-    height: 99.9vh;
+    height: 25rem;
     width: 12vw;
     float: left;
     position: sticky;
@@ -258,8 +267,8 @@
   
     .profileBox {
       // border: 2px solid blue;
-      
       text-align: center;
+
       img {
         border: 1px solid blue;
         border-radius: 50%;
@@ -279,7 +288,7 @@
       // border: 1px solid blue;
       height: 55px;
       width: 55px;
-      margin-top: 10vh;
+      margin-top: 1rem;
     }
   }
 }
