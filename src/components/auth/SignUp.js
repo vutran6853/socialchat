@@ -54,24 +54,23 @@ class SignUp extends Component {
     if(this.state.username !== '' && this.state.password !== '') {
      let content = { userName: this.state.username, passWord: this.state.password }
 
-      // axios.post('/api/auth/register', { userName: this.state.username, passWord: this.state.password })
-      fetch(`${ process.env.REACT_APP_SERVER_URL_REGISTER }`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(content)
-      })
-      .then((response) => response.json())
+      axios.post('/api/auth/register', { userName: this.state.username, passWord: this.state.password })
+      // fetch(`${ process.env.REACT_APP_SERVER_URL_REGISTER }`, {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(content)
+      // })
+      // .then((response) => response.json())
       .then((response) => {
         if(response.name === 'error') {
-          this.notify(3.5)
         } else {
-          this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
-          // this.props.getUserInfo(response.data[0].user_id, response.data[0].user_username, response.data[0].user_profile_pic )
+          // this.props.getUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic)
+          this.props.getUserInfo(response.data[0].user_id, response.data[0].user_username, response.data[0].user_profile_pic )
           this.props.history.push('/dashboard')
-          this.notify(4, response[0].user_username)
+          this.notify(4, response.data[0].user_username)
         }
       })
-      .catch((error) => console.log(`Danger! FrontEnd error ${ error }`))
+      .catch((error) => { this.notify(3.5) })
     } else {
       this.notify(3)
     }

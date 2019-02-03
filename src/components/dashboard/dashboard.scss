@@ -65,6 +65,10 @@
   }
 }
 
+.dashboardPostBox:hover {
+  background-color: whitesmoke;
+}
+
 /// 2k screen
 @media(max-width: $destop1440MinWidth) {
   .dashboardbox {

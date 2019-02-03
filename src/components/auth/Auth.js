@@ -34,24 +34,24 @@ class Auth extends Component {
     if(this.state.username !== '' && this.state.password !== '') {
       let content = { userName: this.state.username, passWord: this.state.password }
 
-      // axios.post('/api/auth/login', { userName: this.state.username, passWord: this.state.password })
-      fetch(`${ process.env.REACT_APP_SERVER_URL_LOGIN }`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userName: this.state.username, passWord: this.state.password } )
-      })
-      .then((response) => response.json())
+      axios.post('/api/auth/login', { userName: this.state.username, passWord: this.state.password })
+      // fetch(`${ process.env.REACT_APP_SERVER_URL_LOGIN }`, {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ userName: this.state.username, passWord: this.state.password } )
+      // })
+      // .then((response) => response.json())
       .then((response) => {
-        if(!response[0]) {
+        if(!response.data[0]) {
           this.notify(1.5)
         } else {
-          this.props.getUpdateUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic, response[0].user_email)
-          // this.props.getUpdateUserInfo(response.data[0].user_id, response.data[0].user_username, response.data[0].user_profile_pic, response.data[0].user_email )
+          // this.props.getUpdateUserInfo(response[0].user_id, response[0].user_username, response[0].user_profile_pic, response[0].user_email)
+          this.props.getUpdateUserInfo(response.data[0].user_id, response.data[0].user_username, response.data[0].user_profile_pic, response.data[0].user_email )
           this.props.history.push('/dashboard')
-          this.notify(2, response[0].user_username)
+          this.notify(2, response.data[0].user_username)
         }
       })
-      .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
+      .catch((error) => this.notify(1.7));
     } else {
       this.notify(1)
     }
@@ -66,6 +66,10 @@ class Auth extends Component {
       });
       case 1.5:
       return toast.warn('No user can be found. Try again', {
+             position: toast.POSITION.TOP_RIGHT,
+      });
+      case 1.7:
+      return toast.error('Incorrect password', {
              position: toast.POSITION.TOP_RIGHT,
       });
       case 2:

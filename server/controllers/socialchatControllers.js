@@ -2,7 +2,7 @@ const axios = require('axios');
 const bcrypt = require('bcryptjs');
 
 const userLogin = (req, res, next) => {
-
+  let errorIncorrectPassword = 'incorrectPassword'
   const dbInstace = req.app.get('db');
 
   dbInstace.login_user(req.body.userName)
@@ -16,7 +16,7 @@ const userLogin = (req, res, next) => {
       if(isAuthenticated) {
         res.status(200).send(response)
       } else {
-        console.log('placeholder');
+        res.status(404).send(errorIncorrectPassword)
       }
     }
   })
@@ -25,7 +25,6 @@ const userLogin = (req, res, next) => {
 
 
 const userRegister = (req, res, next) => {
-
   const dbInstace = req.app.get('db');
   const salt = bcrypt.genSaltSync(10)
   const hashPassword = bcrypt.hashSync(req.body.passWord, salt)
