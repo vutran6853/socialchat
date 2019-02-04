@@ -4,8 +4,6 @@ import Comments from './Comments';
 import css from './post.scss';
 import axios from 'axios';
 
-const SERVER_URL_ENDPOINT = 'http://localhost:3003';
-
 class Post extends Component {
   constructor(props) {
     super(props);
