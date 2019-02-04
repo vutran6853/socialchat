@@ -34,13 +34,13 @@ class Auth extends Component {
     if(this.state.username !== '' && this.state.password !== '') {
       let content = { userName: this.state.username, passWord: this.state.password }
 
-      axios.post('/api/auth/login', { userName: this.state.username, passWord: this.state.password })
-      // fetch(`${ process.env.REACT_APP_SERVER_URL_LOGIN }`, {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ userName: this.state.username, passWord: this.state.password } )
-      // })
-      // .then((response) => response.json())
+      // axios.post('/api/auth/login', { userName: this.state.username, passWord: this.state.password })
+      fetch(`${ process.env.REACT_APP_SERVER_URL_LOGIN }`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userName: this.state.username, passWord: this.state.password } )
+      })
+      .then((response) => response.json())
       .then((response) => {
         if(!response.data[0]) {
           this.notify(1.5)

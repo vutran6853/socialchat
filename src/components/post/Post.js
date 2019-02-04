@@ -26,7 +26,6 @@ class Post extends Component {
     })
     .then((response) => response.json())
     .then((response) => {
-      console.log(response);
       this.setState({ posts: response })
       this.setState({ countThumbsUp: response[0].post_likes ? null : 0 })
       this.setState({ countThumbsDown: response[0].post_dislikes ? null : 0 })
@@ -34,8 +33,8 @@ class Post extends Component {
     .catch((error) => console.log(`Danger! FrontEnd error ${ error }`));
   }
 
+  //// Like or Dislike user post
   handleLikeOrDislikeThumb = (number) => {
-    // console.log('number', number);
     if(number === 1) {
       this.setState({ countThumbsUp: this.state.countThumbsUp + 1 })
       this.haneleCountThumbPost('like')

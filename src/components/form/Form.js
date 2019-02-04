@@ -21,6 +21,7 @@ class Form extends Component {
      }
   }
 
+  ////  Submit Post to Databbase
   handleSubmitPost = () => {
     let { id } = this.props.userReducer;
     let contents = { title: this.state.title, 
@@ -38,7 +39,6 @@ class Form extends Component {
       })
       .then((response) => response.json())
       .then((response) => {
-        // console.log(response);
         this.notify(1)
         this.props.history.push('/dashboard')
       })

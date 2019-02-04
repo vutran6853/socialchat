@@ -54,13 +54,13 @@ class SignUp extends Component {
     if(this.state.username !== '' && this.state.password !== '') {
      let content = { userName: this.state.username, passWord: this.state.password }
 
-      axios.post('/api/auth/register', { userName: this.state.username, passWord: this.state.password })
-      // fetch(`${ process.env.REACT_APP_SERVER_URL_REGISTER }`, {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(content)
-      // })
-      // .then((response) => response.json())
+      // axios.post('/api/auth/register', { userName: this.state.username, passWord: this.state.password })
+      fetch(`${ process.env.REACT_APP_SERVER_URL_REGISTER }`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(content)
+      })
+      .then((response) => response.json())
       .then((response) => {
         if(response.name === 'error') {
         } else {

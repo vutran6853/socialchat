@@ -17,11 +17,9 @@ class ImagePostUploader extends Component {
 
   };
 
-  componentDidUpdate() {
-    let { avatarURL } = this.state;
 
-  }
- 
+  ////  Updata Image to Firebase
+  ////  After send image to store in database
   handleChangeUsername = (event) => 
     this.setState({ username: event.target.value });
     
