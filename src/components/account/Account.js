@@ -11,7 +11,6 @@ import axios from 'axios';
 
 
 function EditUserName(props) {
-  // console.log(props);
   if(!props.data.editAccount) {
     return(
       <input type='text' name='username' 
@@ -26,6 +25,7 @@ function EditUserName(props) {
   }
  
 }
+
 class Account extends Component {
   constructor(props) {
     super(props);
