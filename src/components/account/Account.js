@@ -78,6 +78,7 @@ class Account extends Component {
     }
   }
 
+  ////  Update user password to database
   handlePostUserPassword= (keyCode) => {
     let { newUserPassword } = this.state;
     if(keyCode === 'Enter') {
