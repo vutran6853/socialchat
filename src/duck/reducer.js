@@ -30,7 +30,6 @@ export function getUserInfo(user_id, user_username, user_profile_pic) {
 }
 
 export function getUrlImage(value) {
-  // console.log(value);
   return {
     type: GETURLIMAGE,
     payload: value
@@ -39,7 +38,7 @@ export function getUrlImage(value) {
 
 export function getUpdateUserInfo(user_id, user_username, user_profile_pic, user_email) {
   let content = { id: user_id, username: user_username, profile_pic: user_profile_pic, userEmail: user_email }
-  // console.log(content);
+
   return {
     type: UPDATEUSERINFO,
     payload: content
